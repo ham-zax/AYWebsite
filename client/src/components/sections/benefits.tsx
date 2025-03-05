@@ -1,23 +1,37 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Brain, Clock, TrendingUp, Shield, Zap } from "lucide-react";
 
 const benefits = [
   {
-    title: "Optimized Returns",
-    description: "AI-driven strategies consistently outperform traditional liquidity provisioning",
+    title: "No More Manual Management",
+    description: "Forget about constantly monitoring pools and adjusting positions. Our AI handles everything while you focus on what matters to you.",
+    icon: Clock
   },
   {
-    title: "Risk Management",
-    description: "Advanced algorithms monitor and adjust positions to minimize potential losses",
+    title: "Smart Risk Management",
+    description: "Sleep better knowing our AI actively protects your positions from market volatility and impermanent loss.",
+    icon: Shield
   },
   {
-    title: "Automated Execution",
-    description: "Set-and-forget system handles all aspects of liquidity management",
+    title: "Better Returns, Less Stress",
+    description: "Our platform identifies the most profitable opportunities and automatically rebalances your positions for optimal yields.",
+    icon: TrendingUp
   },
   {
-    title: "Real-time Analytics",
-    description: "Comprehensive dashboard with performance metrics and market insights",
+    title: "Simple Yet Powerful",
+    description: "Whether you're new to DeFi or a seasoned LP provider, we've made liquidity management as easy as a few clicks.",
+    icon: Zap
+  },
+  {
+    title: "AI-Powered Insights",
+    description: "Get real-time analytics and predictions about your LP positions, helping you make informed decisions.",
+    icon: Brain
+  },
+  {
+    title: "Battle-Tested Security",
+    description: "Built on Solana with multiple security layers and real-time monitoring to keep your assets safe.",
+    icon: Shield
   }
 ];
 
@@ -33,11 +47,11 @@ export default function Benefits() {
         >
           <h2 className="text-3xl font-bold mb-4">Why Choose AutoYield?</h2>
           <p className="text-lg text-muted-foreground">
-            Experience the advantages of AI-powered liquidity provisioning
+            We're making DeFi liquidity provision simple, secure, and profitable for everyone. Here's how:
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.title}
@@ -48,7 +62,7 @@ export default function Benefits() {
               <Card className="h-full">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0" />
+                    <benefit.icon className="h-6 w-6 text-primary flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
                       <p className="text-muted-foreground">{benefit.description}</p>

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Wallet, TrendingUp, Sparkles } from "lucide-react";
+import { ArrowRight, Shield, Coins, Bot } from "lucide-react";
 import { SiSolana } from "react-icons/si";
 
 export default function Hero() {
@@ -31,7 +31,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Start Earning Higher DeFi Yields Today
+            Maximize Your DeFi Returns with Smart LP Management
           </motion.h1>
 
           <motion.p 
@@ -40,7 +40,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            AutoYield makes DeFi simple. Our AI-powered platform helps you earn between 20% to 500% APR by automatically managing your liquidity positions on Solana.
+            Let our AI handle the complexities of liquidity provision while you earn 20-500% APR. No more manual pool monitoring or complex rebalancing - we take care of everything.
           </motion.p>
 
           <motion.div
@@ -50,10 +50,10 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Button size="lg" className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600">
-              Start Earning <ArrowRight className="ml-2 h-4 w-4" />
+              Start Providing Liquidity <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button size="lg" variant="outline">
-              Learn DeFi Basics
+              How It Works
             </Button>
           </motion.div>
 
@@ -64,19 +64,19 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <div className="flex flex-col items-center">
-              <Wallet className="h-8 w-8 text-primary mb-2" />
-              <h3 className="text-lg font-semibold">Easy to Start</h3>
-              <p className="text-sm text-muted-foreground">Connect wallet and start earning in minutes</p>
+              <Shield className="h-8 w-8 text-primary mb-2" />
+              <h3 className="text-lg font-semibold">Smart Protection</h3>
+              <p className="text-sm text-muted-foreground">Proactive risk management for your LP positions</p>
             </div>
             <div className="flex flex-col items-center">
-              <TrendingUp className="h-8 w-8 text-primary mb-2" />
-              <h3 className="text-lg font-semibold">High APR</h3>
-              <p className="text-sm text-muted-foreground">Earn up to 500% APR on your deposits</p>
+              <Coins className="h-8 w-8 text-primary mb-2" />
+              <h3 className="text-lg font-semibold">Optimized Returns</h3>
+              <p className="text-sm text-muted-foreground">AI-powered rebalancing for better yields</p>
             </div>
             <div className="flex flex-col items-center">
-              <Sparkles className="h-8 w-8 text-primary mb-2" />
-              <h3 className="text-lg font-semibold">AI-Optimized</h3>
-              <p className="text-sm text-muted-foreground">Smart algorithms maximize your returns</p>
+              <Bot className="h-8 w-8 text-primary mb-2" />
+              <h3 className="text-lg font-semibold">Set and Forget</h3>
+              <p className="text-sm text-muted-foreground">Automated LP management, 24/7</p>
             </div>
           </motion.div>
         </div>
