@@ -5,30 +5,89 @@ import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 
 const DEFI_TERMS = [
+  // Basic LP Terms
   {
     term: "Liquidity Pool (LP)",
     definition: "A smart contract containing paired tokens that enables decentralized trading. Users who provide liquidity earn fees from trades.",
-    category: "Basic"
+    category: "Basic LP"
   },
   {
-    term: "APY",
-    definition: "Annual Percentage Yield - The real rate of return earned on an investment, taking into account the effect of compounding interest.",
-    category: "Basic"
+    term: "APR (Annual Percentage Rate)",
+    definition: "The nominal rate of return on an LP position over one year, not accounting for compounding. Calculated from trading fees and rewards.",
+    category: "Basic LP"
   },
+  {
+    term: "APY (Annual Percentage Yield)",
+    definition: "The effective annual rate of return when accounting for compound interest. Usually higher than APR as it includes reinvestment of earnings.",
+    category: "Basic LP"
+  },
+  {
+    term: "Token Pair",
+    definition: "Two cryptocurrencies that can be traded against each other in a liquidity pool, like SOL/USDC or ETH/USDT.",
+    category: "Basic LP"
+  },
+  // Advanced LP Concepts
   {
     term: "Impermanent Loss",
-    definition: "A temporary loss of funds experienced by liquidity providers due to the volatility of paired tokens in a pool.",
-    category: "Advanced"
+    definition: "The temporary loss of funds experienced by liquidity providers when the price ratio of paired tokens changes compared to when they were deposited.",
+    category: "Advanced LP"
   },
   {
+    term: "Pool Weight",
+    definition: "The relative size of your liquidity provision compared to the total pool, determining your share of trading fees and rewards.",
+    category: "Advanced LP"
+  },
+  {
+    term: "Slippage",
+    definition: "The difference between expected and actual trading prices due to changes in liquidity pool reserves during transaction processing.",
+    category: "Advanced LP"
+  },
+  {
+    term: "Concentrated Liquidity",
+    definition: "A method allowing LPs to provide liquidity within specific price ranges, potentially increasing capital efficiency and returns.",
+    category: "Advanced LP"
+  },
+  // General DeFi Terms
+  {
     term: "Yield Farming",
-    definition: "The practice of staking or lending crypto assets to generate returns in the form of additional cryptocurrency.",
-    category: "Advanced"
+    definition: "The practice of providing liquidity or staking assets across different protocols to maximize returns through various reward mechanisms.",
+    category: "DeFi Basics"
+  },
+  {
+    term: "Total Value Locked (TVL)",
+    definition: "The total value of cryptocurrency assets deposited in a DeFi protocol, often used as a metric for protocol adoption and security.",
+    category: "DeFi Basics"
+  },
+  {
+    term: "Automated Market Maker (AMM)",
+    definition: "A type of DEX protocol that uses mathematical formulas to determine asset prices and enable permissionless trading.",
+    category: "DeFi Basics"
   },
   {
     term: "Smart Contract",
-    definition: "Self-executing contracts with the terms of the agreement directly written into code that runs on the blockchain.",
-    category: "Basic"
+    definition: "Self-executing contracts with the terms directly written into code, forming the backbone of DeFi applications.",
+    category: "DeFi Basics"
+  },
+  // Technical Concepts
+  {
+    term: "Price Impact",
+    definition: "The effect your trade has on the market price, typically larger for bigger trades or less liquid pools.",
+    category: "Technical"
+  },
+  {
+    term: "Bonding Curve",
+    definition: "A mathematical formula that determines the relationship between token price and supply in an AMM.",
+    category: "Technical"
+  },
+  {
+    term: "Gas Fees",
+    definition: "Transaction costs paid to network validators for processing blockchain operations, varying by network congestion.",
+    category: "Technical"
+  },
+  {
+    term: "Oracle",
+    definition: "External data feeds that provide real-world price information to DeFi protocols for accurate asset valuation.",
+    category: "Technical"
   }
 ];
 
@@ -42,6 +101,8 @@ export default function Glossary() {
     const matchesCategory = !selectedCategory || term.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
+
+  const categories = ["Basic LP", "Advanced LP", "DeFi Basics", "Technical"];
 
   const container = {
     hidden: { opacity: 0 },
@@ -69,7 +130,7 @@ export default function Glossary() {
         >
           <h1 className="text-4xl font-bold mb-4">DeFi Glossary</h1>
           <p className="text-lg text-muted-foreground">
-            Your interactive guide to understanding DeFi terminology
+            Your comprehensive guide to understanding DeFi terminology, with focus on Liquidity Provision
           </p>
         </motion.div>
 
@@ -90,7 +151,7 @@ export default function Glossary() {
             />
           </div>
 
-          <div className="flex justify-center gap-4 mt-4">
+          <div className="flex flex-wrap justify-center gap-4 mt-4">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -99,22 +160,17 @@ export default function Glossary() {
             >
               All
             </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setSelectedCategory("Basic")}
-              className={`px-4 py-2 rounded-full ${selectedCategory === "Basic" ? 'bg-primary text-primary-foreground' : 'bg-card hover:bg-accent'}`}
-            >
-              Basic
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setSelectedCategory("Advanced")}
-              className={`px-4 py-2 rounded-full ${selectedCategory === "Advanced" ? 'bg-primary text-primary-foreground' : 'bg-card hover:bg-accent'}`}
-            >
-              Advanced
-            </motion.button>
+            {categories.map(category => (
+              <motion.button
+                key={category}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full ${selectedCategory === category ? 'bg-primary text-primary-foreground' : 'bg-card hover:bg-accent'}`}
+              >
+                {category}
+              </motion.button>
+            ))}
           </div>
         </motion.div>
 
@@ -136,7 +192,10 @@ export default function Glossary() {
                   <div className="flex items-start justify-between mb-4">
                     <h3 className="text-xl font-semibold">{term.term}</h3>
                     <span className={`text-xs px-2 py-1 rounded-full ${
-                      term.category === "Basic" ? "bg-emerald-500/10 text-emerald-500" : "bg-violet-500/10 text-violet-500"
+                      term.category === "Basic LP" ? "bg-emerald-500/10 text-emerald-500" :
+                      term.category === "Advanced LP" ? "bg-violet-500/10 text-violet-500" :
+                      term.category === "DeFi Basics" ? "bg-blue-500/10 text-blue-500" :
+                      "bg-amber-500/10 text-amber-500"
                     }`}>
                       {term.category}
                     </span>
