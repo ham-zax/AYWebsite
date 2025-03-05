@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "What returns can I expect?",
-    answer: "Returns vary based on market conditions and trading activity in your chosen pools. You'll earn a share of trading fees from each transaction that uses your provided liquidity. Our system helps optimize these returns by positioning your assets in the most active pools."
+    answer: "Depending on your chosen strategy and market conditions, you can earn anywhere from 20% to 500% APR through trading fees. Higher returns are possible with more active trading pools and optimal strategy selection. Our system helps you identify and maintain positions in the most profitable pools, though as with all investments, returns can vary."
   },
   {
     question: "How much technical knowledge do I need?",
