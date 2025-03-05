@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Wallet, TrendingUp, Sparkles } from "lucide-react";
+import { SiSolana } from "react-icons/si";
 
 export default function Hero() {
   return (
@@ -15,13 +16,22 @@ export default function Hero() {
 
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
+          <motion.div 
+            className="flex justify-center mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <SiSolana className="h-12 w-12 text-[#14F195]" />
+          </motion.div>
+
           <motion.h1 
             className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            AI-Powered DeFi Liquidity Provisioning
+            Start Earning Higher DeFi Yields Today
           </motion.h1>
 
           <motion.p 
@@ -30,7 +40,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Optimize your yields with cutting-edge AI technology on Solana. Experience the future of automated liquidity management.
+            AutoYield makes DeFi simple. Our AI-powered platform helps you earn between 20% to 500% APR by automatically managing your liquidity positions on Solana.
           </motion.p>
 
           <motion.div
@@ -40,30 +50,33 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Button size="lg" className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600">
-              Get Started <ArrowRight className="ml-2 h-4 w-4" />
+              Start Earning <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button size="lg" variant="outline">
-              View Documentation
+              Learn DeFi Basics
             </Button>
           </motion.div>
 
           <motion.div 
-            className="mt-16 flex justify-center space-x-8"
+            className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <div>
-              <h3 className="text-3xl font-bold">$1B+</h3>
-              <p className="text-sm text-muted-foreground">Total Value Locked</p>
+            <div className="flex flex-col items-center">
+              <Wallet className="h-8 w-8 text-primary mb-2" />
+              <h3 className="text-lg font-semibold">Easy to Start</h3>
+              <p className="text-sm text-muted-foreground">Connect wallet and start earning in minutes</p>
             </div>
-            <div>
-              <h3 className="text-3xl font-bold">100K+</h3>
-              <p className="text-sm text-muted-foreground">Active Users</p>
+            <div className="flex flex-col items-center">
+              <TrendingUp className="h-8 w-8 text-primary mb-2" />
+              <h3 className="text-lg font-semibold">High APR</h3>
+              <p className="text-sm text-muted-foreground">Earn up to 500% APR on your deposits</p>
             </div>
-            <div>
-              <h3 className="text-3xl font-bold">25%</h3>
-              <p className="text-sm text-muted-foreground">Average APY</p>
+            <div className="flex flex-col items-center">
+              <Sparkles className="h-8 w-8 text-primary mb-2" />
+              <h3 className="text-lg font-semibold">AI-Optimized</h3>
+              <p className="text-sm text-muted-foreground">Smart algorithms maximize your returns</p>
             </div>
           </motion.div>
         </div>
