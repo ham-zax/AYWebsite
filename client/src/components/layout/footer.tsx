@@ -9,12 +9,25 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <Link href="/">
-              <a className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent">
-                AutoYield
-              </a>
+              <div className="cursor-pointer">
+                <div className="relative inline-block">
+                  <div className="text-2xl font-bold">
+                    <span className="bg-gradient-to-r from-purple-500 via-violet-500 to-cyan-500 bg-clip-text text-transparent">
+                      Auto
+                    </span>
+                    <span className="bg-gradient-to-r from-cyan-500 to-purple-500 bg-clip-text text-transparent">
+                      Yield
+                    </span>
+                  </div>
+                  <div className="absolute -top-1 -right-2 w-2 h-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full animate-pulse" />
+                </div>
+              </div>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              AI-Powered DeFi Liquidity Provisioning Platform on Solana
+              Simplifying DeFi liquidity provision with AI-powered management on Solana
+            </p>
+            <p className="mt-2 text-xs text-muted-foreground">
+              AutoYield is currently in Beta. Always research and understand DeFi risks before investing.
             </p>
           </div>
 
@@ -24,9 +37,9 @@ export default function Footer() {
               {MENU_ITEMS.map((item) => (
                 <li key={item.path}>
                   <Link href={item.path}>
-                    <a className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <div className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                       {item.label}
-                    </a>
+                    </div>
                   </Link>
                 </li>
               ))}
@@ -37,14 +50,19 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <div className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                   Terms of Service
-                </a>
+                </div>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <div className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                   Privacy Policy
-                </a>
+                </div>
+              </li>
+              <li>
+                <div className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                  Risk Disclosure
+                </div>
               </li>
             </ul>
           </div>

@@ -14,9 +14,18 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <Link href="/">
             <div className="flex items-center space-x-2 cursor-pointer">
-              <span className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent">
-                AutoYield
-              </span>
+              <div className="relative">
+                <div className="text-2xl font-bold">
+                  <span className="bg-gradient-to-r from-purple-500 via-violet-500 to-cyan-500 bg-clip-text text-transparent">
+                    Auto
+                  </span>
+                  <span className="bg-gradient-to-r from-cyan-500 to-purple-500 bg-clip-text text-transparent">
+                    Yield
+                  </span>
+                </div>
+                <div className="absolute -top-1 -right-2 w-2 h-2 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full animate-pulse" />
+              </div>
+              <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-500 border border-purple-500/20">Beta</span>
             </div>
           </Link>
 

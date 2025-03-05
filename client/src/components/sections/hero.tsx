@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Coins, Bot } from "lucide-react";
-import { SiSolana } from "react-icons/si";
 
 export default function Hero() {
   return (
@@ -16,22 +15,13 @@ export default function Hero() {
 
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <motion.div 
-            className="flex justify-center mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <SiSolana className="h-12 w-12 text-[#14F195]" />
-          </motion.div>
-
           <motion.h1 
             className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Maximize Your DeFi Returns with Smart LP Management
+            Put Your Crypto to Work with Smart Liquidity Management
           </motion.h1>
 
           <motion.p 
@@ -40,7 +30,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Let our AI handle the complexities of liquidity provision while you earn 20-500% APR. No more manual pool monitoring or complex rebalancing - we take care of everything.
+            Tired of constantly monitoring your LP positions? We get it. Let our AI handle the complex stuff while you earn 20-500% APR from providing liquidity. It's like having a crypto expert working for you 24/7.
           </motion.p>
 
           <motion.div
@@ -66,19 +56,28 @@ export default function Hero() {
             <div className="flex flex-col items-center">
               <Shield className="h-8 w-8 text-primary mb-2" />
               <h3 className="text-lg font-semibold">Smart Protection</h3>
-              <p className="text-sm text-muted-foreground">Proactive risk management for your LP positions</p>
+              <p className="text-sm text-muted-foreground">We watch your positions so you don't have to</p>
             </div>
             <div className="flex flex-col items-center">
               <Coins className="h-8 w-8 text-primary mb-2" />
               <h3 className="text-lg font-semibold">Optimized Returns</h3>
-              <p className="text-sm text-muted-foreground">AI-powered rebalancing for better yields</p>
+              <p className="text-sm text-muted-foreground">Let your idle tokens earn their keep</p>
             </div>
             <div className="flex flex-col items-center">
               <Bot className="h-8 w-8 text-primary mb-2" />
-              <h3 className="text-lg font-semibold">Set and Forget</h3>
-              <p className="text-sm text-muted-foreground">Automated LP management, 24/7</p>
+              <h3 className="text-lg font-semibold">Peace of Mind</h3>
+              <p className="text-sm text-muted-foreground">Set it and actually forget it</p>
             </div>
           </motion.div>
+
+          <motion.p
+            className="mt-12 text-sm text-muted-foreground"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            Currently in Beta. DeFi involves risks - please do your own research and invest responsibly.
+          </motion.p>
         </div>
       </div>
     </div>
