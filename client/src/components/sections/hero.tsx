@@ -23,7 +23,7 @@ export default function Hero() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <Bot className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium">Powered by Machine Learning</span>
+              <span className="text-sm font-medium">Smart Automated LP Management</span>
             </div>
           </motion.div>
 
@@ -33,17 +33,26 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Smart Liquidity Management with Real-Time Market Intelligence
+            Let Your Crypto Work Harder Without the Hassle
           </motion.h1>
 
           <motion.p 
-            className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"
+            className="text-xl text-muted-foreground mb-4 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Our ML algorithms analyze market data, trading volumes, and price movements to optimize your LP positions 24/7. Earn better yields while our system automatically adjusts to market conditions.
+            Provide liquidity and earn while our smart system manages everything for you. No more constant monitoring or complex decisions.
           </motion.p>
+
+          <motion.div
+            className="text-2xl font-bold text-primary mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            Earn <span className="underline decoration-wavy decoration-primary/50">20-500% APR</span> on Your Tokens
+          </motion.div>
 
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
@@ -52,7 +61,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <Button size="lg" className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600">
-              Start Providing Liquidity <ArrowRight className="ml-2 h-4 w-4" />
+              Start Earning Now <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button size="lg" variant="outline">
               View Performance Stats <LineChart className="ml-2 h-4 w-4" />
@@ -67,23 +76,23 @@ export default function Hero() {
           >
             <div className="flex flex-col items-center p-6 rounded-lg bg-card border">
               <Clock className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Real-Time Analysis</h3>
+              <h3 className="text-lg font-semibold mb-2">Always Working</h3>
               <p className="text-sm text-muted-foreground text-center">
-                Continuous monitoring of market conditions and automatic position adjustments
+                24/7 monitoring and automatic adjustments for best returns
               </p>
             </div>
             <div className="flex flex-col items-center p-6 rounded-lg bg-card border">
               <Shield className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Risk Management</h3>
+              <h3 className="text-lg font-semibold mb-2">Smart Protection</h3>
               <p className="text-sm text-muted-foreground text-center">
-                Advanced algorithms help protect against impermanent loss and market volatility
+                Built-in safeguards against market risks and losses
               </p>
             </div>
             <div className="flex flex-col items-center p-6 rounded-lg bg-card border">
               <Coins className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Yield Optimization</h3>
+              <h3 className="text-lg font-semibold mb-2">Better Returns</h3>
               <p className="text-sm text-muted-foreground text-center">
-                Smart rebalancing to capture the highest yields across different pools
+                Optimized positions to maximize your earning potential
               </p>
             </div>
           </motion.div>
