@@ -9,6 +9,7 @@ export const MENU_ITEMS = [
   { label: "Home", path: "/" },
   { label: "Features", path: "/features" },
   { label: "Documentation", path: "/docs" },
+  { label: "Blog", path: "/blog" },
   { label: "About", path: "/about" }
 ];
 
