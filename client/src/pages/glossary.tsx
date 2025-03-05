@@ -2,92 +2,119 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
+import { Search, BookOpen, Coins, Wallet, Shield, Zap } from "lucide-react";
 
 const DEFI_TERMS = [
-  // Basic LP Terms
+  // Meteora Specific Terms
+  {
+    term: "DLMM (Dynamic Liquidity Market Maker)",
+    definition: "Meteora's innovative market-making protocol that automatically adjusts liquidity concentration based on market conditions, optimizing returns for liquidity providers.",
+    category: "Meteora",
+    example: "When trading volume increases in a specific price range, DLMM automatically concentrates more liquidity there."
+  },
+  {
+    term: "Concentrated Liquidity Range",
+    definition: "A specific price range where liquidity providers focus their assets in Meteora's pools, allowing for more efficient capital usage.",
+    category: "Meteora",
+    example: "Instead of spreading $1000 across all prices, you concentrate it between $10-$12 for better yields."
+  },
+  {
+    term: "Dynamic Fees",
+    definition: "Meteora's adaptive fee system that adjusts based on market volatility and trading volume to optimize returns for liquidity providers.",
+    category: "Meteora",
+    example: "Fees might increase during high volatility periods to compensate LPs for higher risks."
+  },
+
+  // Basic LP Terms (Essential for Beginners)
   {
     term: "Liquidity Pool (LP)",
-    definition: "A smart contract containing paired tokens that enables decentralized trading. Users who provide liquidity earn fees from trades.",
-    category: "Basic LP"
+    definition: "A smart contract containing paired tokens that enables decentralized trading. When you provide liquidity, you're essentially becoming a market maker.",
+    category: "Basic LP",
+    example: "Like putting both SOL and USDC into a pool to help others trade between them."
   },
   {
     term: "APR (Annual Percentage Rate)",
-    definition: "The nominal rate of return on an LP position over one year, not accounting for compounding. Calculated from trading fees and rewards.",
-    category: "Basic LP"
+    definition: "The basic rate of return on your liquidity provision over one year, not counting compound interest. This comes from trading fees and rewards.",
+    category: "Basic LP",
+    example: "A 10% APR means earning $100 on a $1000 investment over a year, not including reinvestment."
   },
   {
     term: "APY (Annual Percentage Yield)",
-    definition: "The effective annual rate of return when accounting for compound interest. Usually higher than APR as it includes reinvestment of earnings.",
-    category: "Basic LP"
+    definition: "The total return rate when including compound interest, where earnings are automatically reinvested to generate more returns.",
+    category: "Basic LP",
+    example: "A 10% APR can result in 10.5% APY if compounded daily."
   },
   {
     term: "Token Pair",
-    definition: "Two cryptocurrencies that can be traded against each other in a liquidity pool, like SOL/USDC or ETH/USDT.",
-    category: "Basic LP"
+    definition: "Two cryptocurrencies that can be traded against each other in a liquidity pool. One is usually a stable asset.",
+    category: "Basic LP",
+    example: "SOL/USDC is a common pair where USDC acts as the stable reference."
   },
-  // Advanced LP Concepts
+
+  // Intermediate LP Concepts
   {
     term: "Impermanent Loss",
-    definition: "The temporary loss of funds experienced by liquidity providers when the price ratio of paired tokens changes compared to when they were deposited.",
-    category: "Advanced LP"
+    definition: "A temporary loss that occurs when the price ratio of your provided tokens changes compared to just holding them. 'Impermanent' because the loss only becomes real if you withdraw during a price imbalance.",
+    category: "Intermediate LP",
+    example: "If SOL price doubles while USDC stays stable, an LP position might be worth less than just holding SOL and USDC separately."
   },
   {
     term: "Pool Weight",
-    definition: "The relative size of your liquidity provision compared to the total pool, determining your share of trading fees and rewards.",
-    category: "Advanced LP"
+    definition: "Your share of the total liquidity pool, determining what percentage of trading fees you earn.",
+    category: "Intermediate LP",
+    example: "If you provide 1 SOL to a pool with 100 SOL total, your pool weight is 1%."
   },
   {
     term: "Slippage",
-    definition: "The difference between expected and actual trading prices due to changes in liquidity pool reserves during transaction processing.",
-    category: "Advanced LP"
+    definition: "The price difference between what you expect and what you get due to market movement during your transaction.",
+    category: "Intermediate LP",
+    example: "Trying to buy SOL at $100 but paying $101 due to market changes."
   },
+
+  // DeFi Fundamentals (For Complete Beginners)
   {
-    term: "Concentrated Liquidity",
-    definition: "A method allowing LPs to provide liquidity within specific price ranges, potentially increasing capital efficiency and returns.",
-    category: "Advanced LP"
-  },
-  // General DeFi Terms
-  {
-    term: "Yield Farming",
-    definition: "The practice of providing liquidity or staking assets across different protocols to maximize returns through various reward mechanisms.",
-    category: "DeFi Basics"
-  },
-  {
-    term: "Total Value Locked (TVL)",
-    definition: "The total value of cryptocurrency assets deposited in a DeFi protocol, often used as a metric for protocol adoption and security.",
-    category: "DeFi Basics"
+    term: "Decentralized Exchange (DEX)",
+    definition: "A platform where you can trade cryptocurrencies directly from your wallet without an intermediary.",
+    category: "DeFi Basics",
+    example: "Like a self-service trading platform, compared to traditional exchanges which are like banks."
   },
   {
     term: "Automated Market Maker (AMM)",
-    definition: "A type of DEX protocol that uses mathematical formulas to determine asset prices and enable permissionless trading.",
-    category: "DeFi Basics"
+    definition: "A system that automatically sets prices based on the ratio of tokens in a pool, eliminating the need for traditional order books.",
+    category: "DeFi Basics",
+    example: "Instead of matching buyers and sellers, prices are determined by a mathematical formula."
+  },
+  {
+    term: "Yield Farming",
+    definition: "Providing liquidity or staking assets across different protocols to maximize returns through various reward mechanisms.",
+    category: "DeFi Basics",
+    example: "Like moving your money between different savings accounts to get the best interest rates."
   },
   {
     term: "Smart Contract",
-    definition: "Self-executing contracts with the terms directly written into code, forming the backbone of DeFi applications.",
-    category: "DeFi Basics"
+    definition: "Self-executing programs on the blockchain that automatically handle transactions and enforce rules.",
+    category: "DeFi Basics",
+    example: "Like a vending machine that automatically gives you tokens when you deposit funds."
   },
-  // Technical Concepts
+
+  // Advanced Concepts
   {
     term: "Price Impact",
-    definition: "The effect your trade has on the market price, typically larger for bigger trades or less liquid pools.",
-    category: "Technical"
-  },
-  {
-    term: "Bonding Curve",
-    definition: "A mathematical formula that determines the relationship between token price and supply in an AMM.",
-    category: "Technical"
-  },
-  {
-    term: "Gas Fees",
-    definition: "Transaction costs paid to network validators for processing blockchain operations, varying by network congestion.",
-    category: "Technical"
+    definition: "How much your trade affects the market price, especially important for larger trades.",
+    category: "Advanced",
+    example: "Trading $1M worth of tokens might move the price more than trading $1K."
   },
   {
     term: "Oracle",
-    definition: "External data feeds that provide real-world price information to DeFi protocols for accurate asset valuation.",
-    category: "Technical"
+    definition: "External data feeds that provide real-world price information to DeFi protocols.",
+    category: "Advanced",
+    example: "Like having a trusted price reporter telling smart contracts the current market rates."
+  },
+  {
+    term: "Arbitrage",
+    definition: "Taking advantage of price differences between different markets or pools.",
+    category: "Advanced",
+    example: "Buying SOL for $98 on one DEX and selling for $100 on another."
   }
 ];
 
@@ -102,7 +129,7 @@ export default function Glossary() {
     return matchesSearch && matchesCategory;
   });
 
-  const categories = ["Basic LP", "Advanced LP", "DeFi Basics", "Technical"];
+  const categories = ["Meteora", "Basic LP", "Intermediate LP", "DeFi Basics", "Advanced"];
 
   const container = {
     hidden: { opacity: 0 },
@@ -128,9 +155,12 @@ export default function Glossary() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <BookOpen className="h-8 w-8 text-primary" />
+          </div>
           <h1 className="text-4xl font-bold mb-4">DeFi Glossary</h1>
           <p className="text-lg text-muted-foreground">
-            Your comprehensive guide to understanding DeFi terminology, with focus on Liquidity Provision
+            Your beginner-friendly guide to understanding DeFi terminology, with focus on Liquidity Provision and Meteora's features
           </p>
         </motion.div>
 
@@ -158,7 +188,7 @@ export default function Glossary() {
               onClick={() => setSelectedCategory(null)}
               className={`px-4 py-2 rounded-full ${!selectedCategory ? 'bg-primary text-primary-foreground' : 'bg-card hover:bg-accent'}`}
             >
-              All
+              All Terms
             </motion.button>
             {categories.map(category => (
               <motion.button
@@ -178,13 +208,13 @@ export default function Glossary() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 gap-6"
         >
           {filteredTerms.map((term, index) => (
             <motion.div
               key={term.term}
               variants={item}
-              whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+              whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
               className="h-full"
             >
               <Card className="h-full hover:shadow-lg transition-shadow duration-300">
@@ -192,15 +222,25 @@ export default function Glossary() {
                   <div className="flex items-start justify-between mb-4">
                     <h3 className="text-xl font-semibold">{term.term}</h3>
                     <span className={`text-xs px-2 py-1 rounded-full ${
+                      term.category === "Meteora" ? "bg-purple-500/10 text-purple-500" :
                       term.category === "Basic LP" ? "bg-emerald-500/10 text-emerald-500" :
-                      term.category === "Advanced LP" ? "bg-violet-500/10 text-violet-500" :
-                      term.category === "DeFi Basics" ? "bg-blue-500/10 text-blue-500" :
+                      term.category === "Intermediate LP" ? "bg-blue-500/10 text-blue-500" :
+                      term.category === "DeFi Basics" ? "bg-cyan-500/10 text-cyan-500" :
                       "bg-amber-500/10 text-amber-500"
                     }`}>
                       {term.category}
                     </span>
                   </div>
-                  <p className="text-muted-foreground">{term.definition}</p>
+                  <p className="text-muted-foreground mb-4">{term.definition}</p>
+                  {term.example && (
+                    <div className="mt-4 p-4 bg-accent/50 rounded-lg">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Zap className="h-4 w-4 text-primary" />
+                        <span className="font-medium">Example:</span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">{term.example}</p>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>
