@@ -8,6 +8,7 @@ import Home from "@/pages/home";
 import Features from "@/pages/features";
 import Docs from "@/pages/docs";
 import Blog from "@/pages/blog";
+import BlogPost from "@/pages/blog/[slug]";
 import About from "@/pages/about";
 import NotFound from "@/pages/not-found";
 
@@ -21,6 +22,7 @@ function Router() {
           <Route path="/features" component={Features} />
           <Route path="/docs" component={Docs} />
           <Route path="/blog" component={Blog} />
+          <Route path="/blog/:slug" component={BlogPost} />
           <Route path="/about" component={About} />
           <Route component={NotFound} />
         </Switch>

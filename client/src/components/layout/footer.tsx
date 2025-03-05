@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { MENU_ITEMS, SOCIAL_LINKS } from "@/lib/constants";
+import { FOOTER_LINKS, SOCIAL_LINKS } from "@/lib/constants";
 import { FaTwitter, FaDiscord, FaTelegram, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
@@ -34,7 +34,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
-              {MENU_ITEMS.map((item) => (
+              {FOOTER_LINKS.map((item) => (
                 <li key={item.path}>
                   <Link href={item.path}>
                     <div className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
@@ -70,16 +70,16 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Community</h3>
             <div className="flex space-x-4">
-              <a href={SOCIAL_LINKS.twitter} className="text-muted-foreground hover:text-primary transition-colors">
+              <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <FaTwitter className="h-5 w-5" />
               </a>
-              <a href={SOCIAL_LINKS.discord} className="text-muted-foreground hover:text-primary transition-colors">
+              <a href={SOCIAL_LINKS.discord} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <FaDiscord className="h-5 w-5" />
               </a>
-              <a href={SOCIAL_LINKS.telegram} className="text-muted-foreground hover:text-primary transition-colors">
+              <a href={SOCIAL_LINKS.telegram} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <FaTelegram className="h-5 w-5" />
               </a>
-              <a href={SOCIAL_LINKS.github} className="text-muted-foreground hover:text-primary transition-colors">
+              <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <FaGithub className="h-5 w-5" />
               </a>
             </div>
