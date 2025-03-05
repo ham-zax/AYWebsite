@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Coins, Bot } from "lucide-react";
+import { ArrowRight, Shield, Coins, Bot, LineChart, Clock, ArrowDown } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -14,27 +14,39 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div 
+            className="flex justify-center mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+              <Bot className="h-4 w-4 text-primary" />
+              <span className="text-sm font-medium">Powered by Machine Learning</span>
+            </div>
+          </motion.div>
+
           <motion.h1 
             className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Put Your Crypto to Work with Smart Liquidity Management
+            Smart Liquidity Management with Real-Time Market Intelligence
           </motion.h1>
 
           <motion.p 
-            className="text-xl text-muted-foreground mb-8"
+            className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Tired of constantly monitoring your LP positions? We get it. Let our AI handle the complex stuff while you earn 20-500% APR from providing liquidity. It's like having a crypto expert working for you 24/7.
+            Our ML algorithms analyze market data, trading volumes, and price movements to optimize your LP positions 24/7. Earn better yields while our system automatically adjusts to market conditions.
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -43,41 +55,74 @@ export default function Hero() {
               Start Providing Liquidity <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button size="lg" variant="outline">
-              How It Works
+              View Performance Stats <LineChart className="ml-2 h-4 w-4" />
             </Button>
           </motion.div>
 
           <motion.div 
-            className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <div className="flex flex-col items-center">
-              <Shield className="h-8 w-8 text-primary mb-2" />
-              <h3 className="text-lg font-semibold">Smart Protection</h3>
-              <p className="text-sm text-muted-foreground">We watch your positions so you don't have to</p>
+            <div className="flex flex-col items-center p-6 rounded-lg bg-card border">
+              <Clock className="h-8 w-8 text-primary mb-4" />
+              <h3 className="text-lg font-semibold mb-2">Real-Time Analysis</h3>
+              <p className="text-sm text-muted-foreground text-center">
+                Continuous monitoring of market conditions and automatic position adjustments
+              </p>
             </div>
-            <div className="flex flex-col items-center">
-              <Coins className="h-8 w-8 text-primary mb-2" />
-              <h3 className="text-lg font-semibold">Optimized Returns</h3>
-              <p className="text-sm text-muted-foreground">Let your idle tokens earn their keep</p>
+            <div className="flex flex-col items-center p-6 rounded-lg bg-card border">
+              <Shield className="h-8 w-8 text-primary mb-4" />
+              <h3 className="text-lg font-semibold mb-2">Risk Management</h3>
+              <p className="text-sm text-muted-foreground text-center">
+                Advanced algorithms help protect against impermanent loss and market volatility
+              </p>
             </div>
-            <div className="flex flex-col items-center">
-              <Bot className="h-8 w-8 text-primary mb-2" />
-              <h3 className="text-lg font-semibold">Peace of Mind</h3>
-              <p className="text-sm text-muted-foreground">Set it and actually forget it</p>
+            <div className="flex flex-col items-center p-6 rounded-lg bg-card border">
+              <Coins className="h-8 w-8 text-primary mb-4" />
+              <h3 className="text-lg font-semibold mb-2">Yield Optimization</h3>
+              <p className="text-sm text-muted-foreground text-center">
+                Smart rebalancing to capture the highest yields across different pools
+              </p>
             </div>
           </motion.div>
 
-          <motion.p
-            className="mt-12 text-sm text-muted-foreground"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            Currently in Beta. DeFi involves risks - please do your own research and invest responsibly.
-          </motion.p>
+            <Button variant="ghost" size="sm" className="text-muted-foreground" onClick={() => {
+              const nextSection = document.getElementById('features');
+              if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>
+              Learn More <ArrowDown className="ml-2 h-4 w-4" />
+            </Button>
+          </motion.div>
+
+          <motion.div
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center gap-8 text-sm text-muted-foreground"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1 }}
+          >
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+              <span>24/7 Monitoring</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-purple-500 rounded-full" />
+              <span>AI-Powered</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-cyan-500 rounded-full" />
+              <span>Solana Speed</span>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>
