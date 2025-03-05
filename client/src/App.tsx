@@ -1,43 +1,34 @@
-import React from "react";
+
 import { Route, Switch } from "wouter";
-import { ThemeProvider } from "./contexts/ThemeContext";
-import { LanguageProvider } from "./contexts/LanguageContext";
+import { Suspense, lazy } from "react";
 import Navbar from "./components/layout/navbar";
 import Footer from "./components/layout/footer";
 import Home from "./pages/home";
-import Dashboard from "./pages/dashboard";
-import Docs from "./pages/docs";
-import FAQ from "./pages/faq";
-import NotFound from "./pages/not-found";
-import "./App.css";
+// Import other existing pages instead of the missing dashboard
+import About from "./pages/about";
+import Features from "./pages/features";
 
-// Custom router for the application
-function CustomRouter({ children }: { children: React.ReactNode }) {
+export default function App() {
   return (
-    <div className="min-h-screen flex flex-col dark:bg-background">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-1">{children}</main>
+      <main className="flex-grow">
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            <Route path="/" component={Home} />
+            {/* Replace dashboard with existing pages */}
+            <Route path="/about" component={About} />
+            <Route path="/features" component={Features} />
+            <Route>
+              <div className="container mx-auto py-20 text-center">
+                <h1 className="text-4xl font-bold">404 - Page Not Found</h1>
+                <p className="mt-4">The page you are looking for doesn't exist.</p>
+              </div>
+            </Route>
+          </Switch>
+        </Suspense>
+      </main>
       <Footer />
     </div>
   );
 }
-
-function App() {
-  return (
-    <ThemeProvider>
-      <LanguageProvider>
-        <CustomRouter>
-          <Switch>
-            <Route path="/" component={Home} />
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/docs" component={Docs} />
-            <Route path="/faq" component={FAQ} />
-            <Route component={NotFound} />
-          </Switch>
-        </CustomRouter>
-      </LanguageProvider>
-    </ThemeProvider>
-  );
-}
-
-export default App;
