@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Coins, Bot, LineChart, Clock, ArrowDown } from "lucide-react";
+import { ArrowRight, Shield, Coins, Bot, Play } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -42,17 +42,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Provide liquidity and earn while our smart system manages everything for you. No more constant monitoring or complex decisions.
+            Provide liquidity and earn trading fees while our smart system manages everything for you. No more constant monitoring or complex decisions.
           </motion.p>
-
-          <motion.div
-            className="text-2xl font-bold text-primary mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            Earn <span className="underline decoration-wavy decoration-primary/50">20-500% APR</span> on Your Tokens
-          </motion.div>
 
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
@@ -64,72 +55,36 @@ export default function Hero() {
               Start Earning Now <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button size="lg" variant="outline">
-              View Performance Stats <LineChart className="ml-2 h-4 w-4" />
+              Watch How It Works <Play className="ml-2 h-4 w-4" />
             </Button>
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <div className="flex flex-col items-center p-6 rounded-lg bg-card border">
-              <Clock className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Always Working</h3>
+              <Bot className="h-8 w-8 text-primary mb-4" />
+              <h3 className="text-lg font-semibold mb-2">Smart Management</h3>
               <p className="text-sm text-muted-foreground text-center">
-                24/7 monitoring and automatic adjustments for best returns
+                Our system handles the complex parts of LP management for you
               </p>
             </div>
             <div className="flex flex-col items-center p-6 rounded-lg bg-card border">
               <Shield className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Smart Protection</h3>
+              <h3 className="text-lg font-semibold mb-2">Risk Protection</h3>
               <p className="text-sm text-muted-foreground text-center">
                 Built-in safeguards against market risks and losses
               </p>
             </div>
             <div className="flex flex-col items-center p-6 rounded-lg bg-card border">
               <Coins className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Better Returns</h3>
+              <h3 className="text-lg font-semibold mb-2">Earn Trading Fees</h3>
               <p className="text-sm text-muted-foreground text-center">
-                Optimized positions to maximize your earning potential
+                Generate revenue from trades in your liquidity pools
               </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="flex justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <Button variant="ghost" size="sm" className="text-muted-foreground" onClick={() => {
-              const nextSection = document.getElementById('features');
-              if (nextSection) {
-                nextSection.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}>
-              Learn More <ArrowDown className="ml-2 h-4 w-4" />
-            </Button>
-          </motion.div>
-
-          <motion.div
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center gap-8 text-sm text-muted-foreground"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1 }}
-          >
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full" />
-              <span>24/7 Monitoring</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-purple-500 rounded-full" />
-              <span>AI-Powered</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-cyan-500 rounded-full" />
-              <span>Solana Speed</span>
             </div>
           </motion.div>
         </div>

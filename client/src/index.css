@@ -14,6 +14,33 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+
+  /* Standardize Typography */
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  p {
+    @apply leading-relaxed text-muted-foreground;
+  }
+
+  /* Section Spacing */
+  section {
+    @apply py-16 md:py-24;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-card border rounded-lg transition-shadow duration-200 hover:shadow-lg;
+  }
 }
 
 /* Mobile Optimizations */
@@ -29,4 +56,31 @@
   .text-left {
     @apply text-center;
   }
+
+  /* Improve Mobile Typography */
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+}
+
+/* Animation Classes */
+.fade-up {
+  @apply opacity-0 translate-y-4 transition-all duration-300;
+}
+
+.fade-up.in-view {
+  @apply opacity-100 translate-y-0;
+}
+
+/* Section Transitions */
+.section-divider {
+  @apply w-full h-px bg-border my-16;
 }
