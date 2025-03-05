@@ -83,7 +83,7 @@ export default function Hero() {
               <Coins className="h-8 w-8 text-primary mb-4" />
               <h3 className="text-lg font-semibold mb-2">Earn Trading Fees</h3>
               <p className="text-sm text-muted-foreground text-center">
-                Generate passive income from your liquidity pools
+                Generate passive income from trading fees with potential returns of 20-500% APR
               </p>
             </div>
           </motion.div>
