@@ -38,3 +38,32 @@ function App() {
 }
 
 export default App;
+import React from "react";
+import { Route, Router, Switch } from "wouter";
+import { Header } from "./components/layout/header";
+
+// Import your pages here
+import Home from "./pages/home";
+import Features from "./pages/features";
+import Pricing from "./pages/pricing";
+import Docs from "./pages/docs";
+import NotFound from "./pages/not-found";
+
+export default function App() {
+  return (
+    <Router>
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/features" component={Features} />
+            <Route path="/pricing" component={Pricing} />
+            <Route path="/docs" component={Docs} />
+            <Route component={NotFound} />
+          </Switch>
+        </main>
+      </div>
+    </Router>
+  );
+}
