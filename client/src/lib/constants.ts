@@ -17,6 +17,7 @@ export const FOOTER_LINKS = [
   { label: "Features", path: "/features" },
   { label: "Documentation", path: "/docs" },
   { label: "About", path: "/about" },
+  { label: "Glossary", path: "/glossary" },
   { label: "Blog", path: "/blog" }
 ];
 
