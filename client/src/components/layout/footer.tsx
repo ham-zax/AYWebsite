@@ -50,19 +50,11 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <div className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
-                  Terms of Service
-                </div>
-              </li>
-              <li>
-                <div className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
-                  Privacy Policy
-                </div>
-              </li>
-              <li>
-                <div className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
-                  Risk Disclosure
-                </div>
+                <Link href="/legal">
+                  <div className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                    Legal Information
+                  </div>
+                </Link>
               </li>
             </ul>
           </div>
