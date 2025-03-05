@@ -1,34 +1,40 @@
+import { Switch, Route } from "wouter";
+import { queryClient } from "./lib/queryClient";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "@/components/ui/toaster";
+import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/footer";
+import Home from "@/pages/home";
+import Features from "@/pages/features";
+import Docs from "@/pages/docs";
+import About from "@/pages/about";
+import NotFound from "@/pages/not-found";
 
-import { Route, Switch } from "wouter";
-import { Suspense, lazy } from "react";
-import Navbar from "./components/layout/navbar";
-import Footer from "./components/layout/footer";
-import Home from "./pages/home";
-// Import other existing pages instead of the missing dashboard
-import About from "./pages/about";
-import Features from "./pages/features";
-
-export default function App() {
+function Router() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <main className="flex-grow">
-        <Suspense fallback={<div>Loading...</div>}>
-          <Switch>
-            <Route path="/" component={Home} />
-            {/* Replace dashboard with existing pages */}
-            <Route path="/about" component={About} />
-            <Route path="/features" component={Features} />
-            <Route>
-              <div className="container mx-auto py-20 text-center">
-                <h1 className="text-4xl font-bold">404 - Page Not Found</h1>
-                <p className="mt-4">The page you are looking for doesn't exist.</p>
-              </div>
-            </Route>
-          </Switch>
-        </Suspense>
+      <main>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/features" component={Features} />
+          <Route path="/docs" component={Docs} />
+          <Route path="/about" component={About} />
+          <Route component={NotFound} />
+        </Switch>
       </main>
       <Footer />
     </div>
   );
 }
+
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Router />
+      <Toaster />
+    </QueryClientProvider>
+  );
+}
+
+export default App;
