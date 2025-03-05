@@ -3,12 +3,16 @@ import { FOOTER_LINKS, SOCIAL_LINKS } from "@/lib/constants";
 import { FaTwitter, FaDiscord, FaTelegram, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-card mt-16 border-t">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <Link href="/">
+            <Link href="/" onClick={handleLinkClick}>
               <div className="cursor-pointer">
                 <div className="relative inline-block">
                   <div className="text-2xl font-bold">
@@ -26,9 +30,6 @@ export default function Footer() {
             <p className="mt-4 text-sm text-muted-foreground">
               Simplifying DeFi liquidity provision with AI-powered management on Solana
             </p>
-            <p className="mt-2 text-xs text-muted-foreground">
-              AutoYield is currently in Beta. Always research and understand DeFi risks before investing.
-            </p>
           </div>
 
           <div>
@@ -36,7 +37,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {FOOTER_LINKS.map((item) => (
                 <li key={item.path}>
-                  <Link href={item.path}>
+                  <Link href={item.path} onClick={handleLinkClick}>
                     <div className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                       {item.label}
                     </div>
@@ -50,7 +51,7 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Legal & Support</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/legal">
+                <Link href="/legal" onClick={handleLinkClick}>
                   <div className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                     Terms & Privacy
                   </div>
@@ -62,7 +63,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/docs">
+                <Link href="/docs" onClick={handleLinkClick}>
                   <div className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                     Documentation
                   </div>
@@ -116,7 +117,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-center text-muted-foreground">
+            <p className="text-sm text-center md:text-left text-muted-foreground">
               © {new Date().getFullYear()} AutoYield. All rights reserved.
             </p>
             <div className="flex items-center gap-2">
