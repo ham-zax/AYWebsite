@@ -15,15 +15,15 @@ const faqs = [
   },
   {
     question: "How does AutoYield make LP management easier?",
-    answer: "We handle all the complex parts of LP management - monitoring pool health, rebalancing positions, and optimizing for best returns. You simply deposit your tokens, and our AI takes care of everything else. No more constant monitoring or manual adjustments needed."
+    answer: "We handle all the complex parts of LP management - monitoring pool health, rebalancing positions, and optimizing for best returns. You simply deposit your tokens, and our system takes care of everything else. No more constant monitoring or manual adjustments needed."
   },
   {
     question: "Is my investment safe with AutoYield?",
-    answer: "Security is our top priority. We use battle-tested smart contracts, real-time monitoring, and multiple security layers. Our AI also helps protect against impermanent loss by automatically adjusting positions based on market conditions."
+    answer: "Security is our top priority. We use battle-tested smart contracts, real-time monitoring, and multiple security layers. Our system also helps protect against impermanent loss by automatically adjusting positions based on market conditions."
   },
   {
     question: "What returns can I expect?",
-    answer: "While returns vary based on market conditions, our users typically earn between 20-500% APR. These returns come from trading fees and optimized position management. Remember that all DeFi investments carry risks, and past performance doesn't guarantee future returns."
+    answer: "Returns vary based on market conditions and trading activity in your chosen pools. You'll earn a share of trading fees from each transaction that uses your provided liquidity. Our system helps optimize these returns by positioning your assets in the most active pools."
   },
   {
     question: "How much technical knowledge do I need?",
