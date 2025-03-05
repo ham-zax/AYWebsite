@@ -23,7 +23,7 @@ export default function Hero() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <Bot className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium">Powered by AI and Built on Solana</span>
+              <span className="text-sm font-medium">Simple Liquidity Management</span>
             </div>
           </motion.div>
 
@@ -33,7 +33,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Let Your Crypto Work Harder Without the Hassle
+            Earn More From Your Crypto
           </motion.h1>
 
           <motion.p 
@@ -42,7 +42,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Provide liquidity and earn trading fees while our AI-powered system handles the complex management. Just deposit your tokens and let our technology work for you.
+            Add your tokens to liquidity pools and let our AI help maximize your trading fees. It's like having a crypto expert working for you 24/7.
           </motion.p>
 
           <motion.div
@@ -65,25 +65,25 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <div className="flex flex-col items-center p-6 rounded-lg bg-card border">
+            <div className="flex flex-col items-center p-6 rounded-lg bg-card border hover:border-primary/50 transition-colors">
               <Bot className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">AI-Driven Management</h3>
+              <h3 className="text-lg font-semibold mb-2">Smart System</h3>
               <p className="text-sm text-muted-foreground text-center">
-                Our algorithms monitor markets 24/7 to optimize your positions
+                Our AI helps manage your positions to find the best opportunities
               </p>
             </div>
-            <div className="flex flex-col items-center p-6 rounded-lg bg-card border">
+            <div className="flex flex-col items-center p-6 rounded-lg bg-card border hover:border-primary/50 transition-colors">
               <Shield className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Risk Protection</h3>
+              <h3 className="text-lg font-semibold mb-2">Peace of Mind</h3>
               <p className="text-sm text-muted-foreground text-center">
-                Built-in safeguards help protect against market volatility
+                Built-in protection against market volatility
               </p>
             </div>
-            <div className="flex flex-col items-center p-6 rounded-lg bg-card border">
+            <div className="flex flex-col items-center p-6 rounded-lg bg-card border hover:border-primary/50 transition-colors">
               <Coins className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Earn Trading Fees</h3>
+              <h3 className="text-lg font-semibold mb-2">Regular Income</h3>
               <p className="text-sm text-muted-foreground text-center">
-                Generate passive income from your liquidity pools
+                Earn fees from trades in your liquidity pools
               </p>
             </div>
           </motion.div>
