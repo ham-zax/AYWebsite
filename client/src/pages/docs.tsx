@@ -14,6 +14,7 @@ import {
   LineChart,
   Zap
 } from "lucide-react";
+import DiagramsHub from "@/components/diagrams";
 
 export default function Docs() {
   return (
@@ -95,6 +96,11 @@ export default function Docs() {
                     <p>
                       Think of liquidity provision like being a market maker at your local farmers' market. Just as a market maker keeps stock of different goods to facilitate trade, liquidity providers supply pairs of tokens to DEXs (Decentralized Exchanges) so others can trade them easily.
                     </p>
+
+                    {/* Add the DiagramsHub component here */}
+                    <div className="my-8">
+                      <DiagramsHub />
+                    </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
                       <div className="p-4 bg-card rounded-lg border">
