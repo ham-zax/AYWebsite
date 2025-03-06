@@ -42,7 +42,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Automate rebalancing, optimize liquidity positions, and maximize real-time yield. Capture higher fees, reduce impermanent loss, and maintain profitability—even in volatile markets.
+            Effortlessly maximize LP fees with automated rebalancing, smart position adjustments, and real-time yield optimization—no manual management required.
           </motion.p>
 
           <motion.div
