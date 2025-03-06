@@ -15,7 +15,7 @@ const benefits = [
   },
   {
     title: "Capital Efficiency Optimization",
-    description: "Achieve 50-100x higher capital efficiency compared to traditional AMMs. Our concentrated liquidity positions precisely target the most active price ranges to maximize your trading fee revenue.",
+    description: "Achieve 2-20x higher capital efficiency compared to traditional AMMs. Our concentrated liquidity positions precisely target the most active price ranges to maximize your trading fee revenue.",
     icon: TrendingUp
   },
   {

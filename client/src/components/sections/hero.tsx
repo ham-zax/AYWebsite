@@ -33,7 +33,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Let Your Crypto Work Harder Without the Hassle
+            Provide liquidity, earn trading fees, and let AI handle the rest.
           </motion.h1>
 
           <motion.p 
@@ -42,7 +42,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Provide liquidity and earn trading fees while our AI-powered system handles the complex management. Just deposit your tokens and let our technology work for you.
+            AutoYield optimizes, rebalances, and compounds automatically—so you profit without the hassle.
           </motion.p>
 
           <motion.div
