@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Search, BookOpen, Coins, Wallet, Shield, Zap } from "lucide-react";
-import ConceptsNetwork from "@/components/diagrams/ConceptsNetwork";
 
 const DEFI_TERMS = [
   // Meteora Specific Terms
@@ -151,7 +150,7 @@ export default function Glossary() {
     <div className="pt-24 pb-16">
       <div className="container mx-auto px-4">
         <motion.div 
-          className="max-w-3xl mx-auto text-center mb-8"
+          className="max-w-3xl mx-auto text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -163,24 +162,6 @@ export default function Glossary() {
           <p className="text-lg text-muted-foreground">
             Your beginner-friendly guide to understanding DeFi terminology, with focus on Liquidity Provision and Meteora's features
           </p>
-        </motion.div>
-
-        {/* Add the ConceptsNetwork diagram */}
-        <motion.div 
-          className="max-w-4xl mx-auto mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-xl font-semibold mb-4 text-center">DeFi Concepts Map</h3>
-              <p className="text-sm text-muted-foreground text-center mb-8">
-                Explore how different DeFi concepts are connected. Hover over any term to highlight it.
-              </p>
-              <ConceptsNetwork />
-            </CardContent>
-          </Card>
         </motion.div>
 
         <motion.div 
