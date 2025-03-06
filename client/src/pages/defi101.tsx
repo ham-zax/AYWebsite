@@ -124,12 +124,12 @@ export default function DeFi101() {
                   </div>
                 </div>
 
-                {/* Solana Technical Advantages */}
+                {/* Solana Technical Advantages - Improved for mobile */}
                 <div className="p-8 my-12 bg-gradient-to-r from-violet-900/30 to-cyan-900/30 rounded-xl border border-violet-500/20 shadow-lg">
                   <h3 className="text-2xl font-semibold mb-6 text-center">Solana Technical Advantages</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary/20 p-3 rounded-full flex-shrink-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="flex flex-col sm:flex-row items-start gap-4">
+                      <div className="bg-primary/20 p-3 rounded-full flex-shrink-0 mb-2 sm:mb-0">
                         <Zap className="h-6 w-6 text-primary" />
                       </div>
                       <div>
@@ -137,8 +137,8 @@ export default function DeFi101() {
                         <p className="text-muted-foreground">Enables extremely efficient cross-DEX arbitrage and position rebalancing</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary/20 p-3 rounded-full flex-shrink-0">
+                    <div className="flex flex-col sm:flex-row items-start gap-4">
+                      <div className="bg-primary/20 p-3 rounded-full flex-shrink-0 mb-2 sm:mb-0">
                         <LineChart className="h-6 w-6 text-primary" />
                       </div>
                       <div>
@@ -146,8 +146,8 @@ export default function DeFi101() {
                         <p className="text-muted-foreground">Gulf Stream and Sealevel enable 65,000 TPS with transaction parallelization</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary/20 p-3 rounded-full flex-shrink-0">
+                    <div className="flex flex-col sm:flex-row items-start gap-4">
+                      <div className="bg-primary/20 p-3 rounded-full flex-shrink-0 mb-2 sm:mb-0">
                         <Shield className="h-6 w-6 text-primary" />
                       </div>
                       <div>
@@ -155,8 +155,8 @@ export default function DeFi101() {
                         <p className="text-muted-foreground">Block propagation protocol enables more complex DeFi composability</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-4">
-                      <div className="bg-primary/20 p-3 rounded-full flex-shrink-0">
+                    <div className="flex flex-col sm:flex-row items-start gap-4">
+                      <div className="bg-primary/20 p-3 rounded-full flex-shrink-0 mb-2 sm:mb-0">
                         <Wallet className="h-6 w-6 text-primary" />
                       </div>
                       <div>
