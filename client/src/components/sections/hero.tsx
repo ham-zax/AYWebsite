@@ -33,7 +33,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Provide liquidity, earn trading fees, and let AI handle the rest.
+            Earn More Fees with Algorithmic Liquidity Management.
           </motion.h1>
 
           <motion.p 
@@ -42,7 +42,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            AutoYield optimizes, rebalances, and compounds automatically—so you profit without the hassle.
+            Automate rebalancing, optimize liquidity positions, and maximize real-time yield. Capture higher fees, reduce impermanent loss, and maintain profitability—even in volatile markets.
           </motion.p>
 
           <motion.div
