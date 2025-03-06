@@ -38,7 +38,7 @@ export default function Docs() {
           </div>
 
           <Tabs defaultValue="getting-started" className="mb-8">
-            <TabsList className="grid grid-cols-3 w-full mb-8">
+            <TabsList className="grid grid-cols-2 w-full mb-8">
               <TabsTrigger value="getting-started" className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4" />
                 <span>Implementation Guide</span>
@@ -46,10 +46,6 @@ export default function Docs() {
               <TabsTrigger value="platform-guide" className="flex items-center gap-2">
                 <TrendingUp className="h-4 w-4" />
                 <span>Strategy Optimization</span>
-              </TabsTrigger>
-              <TabsTrigger value="technical" className="flex items-center gap-2">
-                <Code className="h-4 w-4" />
-                <span>Technical Architecture</span>
               </TabsTrigger>
             </TabsList>
 
@@ -100,7 +96,7 @@ export default function Docs() {
                     <ol className="space-y-6 my-6">
                       <li className="bg-card border rounded-lg p-4 shadow-sm">
                         <div className="flex items-start gap-3">
-                          <div className="bg-primary/20 text-primary p-2 rounded-full flex-shrink-0">
+                          <div className="bg-primary/20 p-2 rounded-full flex-shrink-0">
                             <span className="font-bold">1</span>
                           </div>
                           <div>
@@ -113,7 +109,7 @@ export default function Docs() {
                       </li>
                       <li className="bg-card border rounded-lg p-4 shadow-sm">
                         <div className="flex items-start gap-3">
-                          <div className="bg-primary/20 text-primary p-2 rounded-full flex-shrink-0">
+                          <div className="bg-primary/20 p-2 rounded-full flex-shrink-0">
                             <span className="font-bold">2</span>
                           </div>
                           <div>
@@ -124,7 +120,7 @@ export default function Docs() {
                       </li>
                       <li className="bg-card border rounded-lg p-4 shadow-sm">
                         <div className="flex items-start gap-3">
-                          <div className="bg-primary/20 text-primary p-2 rounded-full flex-shrink-0">
+                          <div className="bg-primary/20 p-2 rounded-full flex-shrink-0">
                             <span className="font-bold">3</span>
                           </div>
                           <div>
@@ -313,130 +309,6 @@ const createPosition = async () => {
                       </h4>
                       <p className="text-sm m-0">
                         Our upcoming V2 protocol introduces cross-protocol arbitrage, advanced composability with lending platforms, and leveraged positions with automated liquidation protection. Beta participants gain early access to these features.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-
-            <TabsContent value="technical">
-              <Card className="shadow-md">
-                <CardContent className="pt-6">
-                  <div className="prose prose-invert max-w-none">
-                    <div className="flex items-center gap-2 mb-6">
-                      <Code className="h-6 w-6 text-primary" />
-                      <h2 className="text-2xl font-semibold m-0">Technical Architecture</h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                      <div className="bg-card border rounded-lg p-5 shadow-sm">
-                        <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                          <Settings className="h-5 w-5 text-primary" />
-                          Smart Contract Architecture
-                        </h3>
-                        <p className="text-sm text-muted-foreground mb-4">
-                          Our protocol operates via a modular architecture of specialized Solana programs:
-                        </p>
-                        <ul className="space-y-2">
-                          <li className="flex items-start gap-2">
-                            <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm"><code>PositionManager</code>: Handles creation, lifecycle, and interactions with liquidity positions</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm"><code>StrategyController</code>: Implements algorithmic decision logic for position adjustments</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm"><code>FeeProcessor</code>: Handles fee collection, compounding, and yield distribution</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm"><code>GuardianModule</code>: Emergency protocol for risk and security protection</span>
-                          </li>
-                        </ul>
-                      </div>
-
-                      <div className="bg-card border rounded-lg p-5 shadow-sm">
-                        <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                          <TrendingUp className="h-5 w-5 text-primary" />
-                          Strategy Engine Architecture
-                        </h3>
-                        <p className="text-sm text-muted-foreground mb-4">
-                          Our AI strategy engine processes multiple data sources for optimal position management:
-                        </p>
-                        <ul className="space-y-2">
-                          <li className="flex items-start gap-2">
-                            <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm">On-chain time series analysis with statistical volatility modeling</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm">MEV-resistant execution pathways with optimized transaction timing</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm">Cross-pool analytics for liquidity fragmentation detection</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm">Predictive gas modeling for minimizing transaction costs</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                      <Code className="h-5 w-5 text-primary" />
-                      API Reference
-                    </h3>
-                    <div className="bg-card border rounded-lg">
-                      <div className="p-3 border-b bg-muted/50 text-sm font-mono">
-                        Position Data Endpoint
-                      </div>
-                      <pre className="bg-card p-4 rounded-b-lg m-0 overflow-x-auto">
-                        <code className="text-sm">
-                          {`GET /api/v1/positions/:wallet_address`}
-                        </code>
-                      </pre>
-                    </div>
-
-                    <div className="bg-card border rounded-lg mt-4">
-                      <div className="p-3 border-b bg-muted/50 text-sm font-mono">
-                        Response Schema
-                      </div>
-                      <pre className="bg-card p-4 rounded-b-lg m-0 overflow-x-auto">
-                        <code className="text-sm">
-                          {`{
-  "positions": [{
-    "pool_id": "string",
-    "tokens": ["SOL", "USDC"],
-    "value_usd": "number",
-    "apr": "number",
-    "health_score": "number",
-    "range_utilization": "number",
-    "fee_tier": "number",
-    "position_delta": {
-      "delta_1d": "number",
-      "delta_7d": "number",
-      "il_component": "number",
-      "fee_component": "number"
-    },
-    "next_rebalance_estimate": "timestamp"
-  }]
-}`}
-                        </code>
-                      </pre>
-                    </div>
-
-                    <div className="mt-8 p-5 bg-gradient-to-r from-primary/20 to-primary/5 rounded-lg border border-primary/20 shadow-md">
-                      <h4 className="text-lg font-semibold mb-2 flex items-center gap-2">
-                        <BookOpen className="h-5 w-5 text-primary" />
-                        Developer Resources
-                      </h4>
-                      <p className="m-0">
-                        Access our comprehensive <a href="/docs/api" className="text-primary hover:text-primary/80">API documentation</a>, <a href="https://github.com/autoyield/sdk" className="text-primary hover:text-primary/80">SDK repository</a>, and join our <a href="https://discord.gg/autoyield" className="text-primary hover:text-primary/80">Developer Discord</a> for technical support and integration assistance.
                       </p>
                     </div>
                   </div>

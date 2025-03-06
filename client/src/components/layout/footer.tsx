@@ -100,7 +100,7 @@ export default function Footer() {
                 <span>Telegram</span>
               </a>
               <a 
-                href={SOCIAL_LINKS.github} 
+                href="https://github.com/autoyield-defi" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"

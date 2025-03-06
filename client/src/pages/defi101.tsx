@@ -167,7 +167,7 @@ export default function DeFi101() {
                   </div>
                 </div>
 
-                {/* Advanced Strategy Deployment */}
+                {/* Advanced Strategy Deployment - Fixed for mobile */}
                 <div>
                   <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2 justify-center">
                     <div className="bg-primary/20 p-2 rounded-full">
@@ -177,11 +177,11 @@ export default function DeFi101() {
                   </h3>
                   <ol className="space-y-4 mb-8">
                     <li className="p-5 bg-card rounded-lg border shadow-md transform transition-transform duration-300 hover:translate-y-[-2px]">
-                      <div className="flex items-start gap-4">
+                      <div className="flex flex-wrap items-start gap-4">
                         <div className="bg-gradient-to-br from-primary/30 to-primary/10 p-3 rounded-full flex-shrink-0">
                           <span className="text-primary font-bold text-lg">1</span>
                         </div>
-                        <div>
+                        <div className="flex-1 min-w-[200px]">
                           <h4 className="font-semibold text-lg mb-1">Multi-DEX Liquidity Deployment</h4>
                           <p className="text-muted-foreground">Deploy capital across multiple DEXs (Orca, Raydium, Jupiter) simultaneously to capture fee generation from varying price coefficient protocols.</p>
                           <div className="mt-2 text-sm text-primary flex items-center gap-1">
@@ -192,11 +192,11 @@ export default function DeFi101() {
                       </div>
                     </li>
                     <li className="p-5 bg-card rounded-lg border shadow-md transform transition-transform duration-300 hover:translate-y-[-2px]">
-                      <div className="flex items-start gap-4">
+                      <div className="flex flex-wrap items-start gap-4">
                         <div className="bg-gradient-to-br from-primary/30 to-primary/10 p-3 rounded-full flex-shrink-0">
                           <span className="text-primary font-bold text-lg">2</span>
                         </div>
-                        <div>
+                        <div className="flex-1 min-w-[200px]">
                           <h4 className="font-semibold text-lg mb-1">Range Optimization Parameters</h4>
                           <p className="text-muted-foreground">Configure volatility thresholds and oracle confidence intervals to optimize position range width for your risk profile.</p>
                           <div className="mt-2 text-sm text-primary flex items-center gap-1">
@@ -207,11 +207,11 @@ export default function DeFi101() {
                       </div>
                     </li>
                     <li className="p-5 bg-card rounded-lg border shadow-md transform transition-transform duration-300 hover:translate-y-[-2px]">
-                      <div className="flex items-start gap-4">
+                      <div className="flex flex-wrap items-start gap-4">
                         <div className="bg-gradient-to-br from-primary/30 to-primary/10 p-3 rounded-full flex-shrink-0">
                           <span className="text-primary font-bold text-lg">3</span>
                         </div>
-                        <div>
+                        <div className="flex-1 min-w-[200px]">
                           <h4 className="font-semibold text-lg mb-1">Rebalancing Trigger Strategy</h4>
                           <p className="text-muted-foreground">Set custom MEV-resistant rebalancing parameters based on price drift, range utilization, and gas optimization metrics.</p>
                           <div className="mt-2 text-sm text-primary flex items-center gap-1">
@@ -222,11 +222,11 @@ export default function DeFi101() {
                       </div>
                     </li>
                     <li className="p-5 bg-card rounded-lg border shadow-md transform transition-transform duration-300 hover:translate-y-[-2px]">
-                      <div className="flex items-start gap-4">
+                      <div className="flex flex-wrap items-start gap-4">
                         <div className="bg-gradient-to-br from-primary/30 to-primary/10 p-3 rounded-full flex-shrink-0">
                           <span className="text-primary font-bold text-lg">4</span>
                         </div>
-                        <div>
+                        <div className="flex-1 min-w-[200px]">
                           <h4 className="font-semibold text-lg mb-1">Analytics & Risk Management</h4>
                           <p className="text-muted-foreground">Access real-time analytics including position delta, gamma exposure, and rebalance opportunity cost metrics.</p>
                           <div className="mt-2 text-sm text-primary flex items-center gap-1">
@@ -241,32 +241,6 @@ export default function DeFi101() {
               </div>
             </CardContent>
           </Card>
-
-          <div className="text-center">
-            <motion.div
-              className="p-6 bg-gradient-to-r from-violet-500/20 to-cyan-500/20 rounded-xl border border-primary/30 shadow-lg"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <h3 className="text-xl font-semibold mb-3 flex items-center justify-center gap-2">
-                <TrendingUp className="h-5 w-5 text-primary" />
-                Ready to Optimize Your DeFi Strategy?
-              </h3>
-              <p className="text-muted-foreground mb-4 max-w-2xl mx-auto">
-                Leverage our advanced position management algorithms to improve capital efficiency and minimize IL exposure across your liquidity portfolio.
-              </p>
-              <div className="flex items-center justify-center flex-wrap gap-4">
-                <a href="/glossary" className="bg-primary/90 hover:bg-primary text-primary-foreground font-medium py-2 px-6 rounded-lg transition-colors flex items-center gap-2">
-                  <Code className="h-4 w-4" />
-                  Technical Documentation
-                </a>
-                <a href="/features" className="bg-card hover:bg-accent text-foreground font-medium py-2 px-6 rounded-lg border transition-colors flex items-center gap-2">
-                  <TrendingUp className="h-4 w-4" />
-                  Strategy Performance Dashboard
-                </a>
-              </div>
-            </motion.div>
-          </div>
         </motion.div>
       </div>
     </div>
