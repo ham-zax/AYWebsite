@@ -25,38 +25,32 @@ const DEFI_TERMS = [
     example: "Fees might increase during high volatility periods to compensate LPs for higher risks."
   },
 
-  // Basic LP Terms (Essential for Beginners)
+  // Advanced LP Concepts
   {
-    term: "Liquidity Pool (LP)",
-    definition: "A smart contract containing paired tokens that enables decentralized trading. When you provide liquidity, you're essentially becoming a market maker.",
-    category: "Basic LP",
-    example: "Like putting both SOL and USDC into a pool to help others trade between them."
+    term: "Fee Tier Optimization",
+    definition: "The process of selecting optimal fee tiers based on volatility profiles and trading volume to maximize yield while maintaining competitive pricing.",
+    category: "Advanced",
+    example: "Selecting a 1% fee tier for volatile token pairs during market turbulence to compensate for increased impermanent loss risk."
   },
   {
-    term: "APR (Annual Percentage Rate)",
-    definition: "The basic rate of return on your liquidity provision over one year, not counting compound interest. This comes from trading fees and rewards.",
-    category: "Basic LP",
-    example: "A 10% APR means earning $100 on a $1000 investment over a year, not including reinvestment."
+    term: "Range Orders",
+    definition: "A liquidity provision strategy that acts as a limit order by providing single-sided liquidity in a specific price range.",
+    category: "Advanced",
+    example: "Setting a narrow range above current price to effectively create a limit sell order that earns fees while waiting to execute."
   },
   {
-    term: "APY (Annual Percentage Yield)",
-    definition: "The total return rate when including compound interest, where earnings are automatically reinvested to generate more returns.",
-    category: "Basic LP",
-    example: "A 10% APR can result in 10.5% APY if compounded daily."
-  },
-  {
-    term: "Token Pair",
-    definition: "Two cryptocurrencies that can be traded against each other in a liquidity pool. One is usually a stable asset.",
-    category: "Basic LP",
-    example: "SOL/USDC is a common pair where USDC acts as the stable reference."
+    term: "Position Delta Hedging",
+    definition: "A risk management technique that offsets potential impermanent loss by taking complementary positions in related markets or derivatives.",
+    category: "Advanced",
+    example: "Hedging a SOL/USDC LP position with a partial short position in perpetual futures to reduce directional exposure."
   },
 
-  // Intermediate LP Concepts
+  // LP Concepts (For Intermediate Users)
   {
     term: "Impermanent Loss",
-    definition: "A temporary loss that occurs when the price ratio of your provided tokens changes compared to just holding them. 'Impermanent' because the loss only becomes real if you withdraw during a price imbalance.",
+    definition: "A temporary loss that occurs when the price ratio of your provided tokens changes compared to just holding them. The loss is 'impermanent' until liquidity is withdrawn, as price recovery can reduce or eliminate the loss.",
     category: "Intermediate LP",
-    example: "If SOL price doubles while USDC stays stable, an LP position might be worth less than just holding SOL and USDC separately."
+    example: "If SOL price doubles while USDC stays stable, an LP position might be worth 5.7% less than just holding the tokens separately."
   },
   {
     term: "Pool Weight",
@@ -65,56 +59,62 @@ const DEFI_TERMS = [
     example: "If you provide 1 SOL to a pool with 100 SOL total, your pool weight is 1%."
   },
   {
-    term: "Slippage",
-    definition: "The price difference between what you expect and what you get due to market movement during your transaction.",
+    term: "Fee Reinvestment",
+    definition: "The automated process of compounding earned trading fees back into the liquidity position to increase capital efficiency and long-term returns.",
     category: "Intermediate LP",
-    example: "Trying to buy SOL at $100 but paying $101 due to market changes."
+    example: "Reinvesting 2% earned fees daily can increase annual returns from 25% APR to 28.3% APY."
   },
-
-  // DeFi Fundamentals (For Complete Beginners)
-  {
-    term: "Decentralized Exchange (DEX)",
-    definition: "A platform where you can trade cryptocurrencies directly from your wallet without an intermediary.",
-    category: "DeFi Basics",
-    example: "Like a self-service trading platform, compared to traditional exchanges which are like banks."
-  },
-  {
-    term: "Automated Market Maker (AMM)",
-    definition: "A system that automatically sets prices based on the ratio of tokens in a pool, eliminating the need for traditional order books.",
-    category: "DeFi Basics",
-    example: "Instead of matching buyers and sellers, prices are determined by a mathematical formula."
-  },
-  {
-    term: "Yield Farming",
-    definition: "Providing liquidity or staking assets across different protocols to maximize returns through various reward mechanisms.",
-    category: "DeFi Basics",
-    example: "Like moving your money between different savings accounts to get the best interest rates."
-  },
-  {
-    term: "Smart Contract",
-    definition: "Self-executing programs on the blockchain that automatically handle transactions and enforce rules.",
-    category: "DeFi Basics",
-    example: "Like a vending machine that automatically gives you tokens when you deposit funds."
-  },
-
-  // Advanced Concepts
   {
     term: "Price Impact",
     definition: "How much your trade affects the market price, especially important for larger trades.",
-    category: "Advanced",
+    category: "Intermediate LP",
     example: "Trading $1M worth of tokens might move the price more than trading $1K."
+  },
+
+  // Technical Concepts
+  {
+    term: "Time-Weighted Average Market Maker (TWAMM)",
+    definition: "An automated market maker design that executes large orders gradually over time to minimize price impact and protect against front-running.",
+    category: "Technical",
+    example: "A TWAMM can split a $1M order into thousands of micro-transactions executed over 24 hours."
+  },
+  {
+    term: "Virtual AMM (vAMM)",
+    definition: "A synthetic AMM that doesn't require actual token reserves but simulates their behavior for derivatives trading using virtual balances.",
+    category: "Technical",
+    example: "Perpetual futures protocols often use vAMMs to determine synthetic asset prices without holding the underlying tokens."
+  },
+  {
+    term: "MEV (Maximal Extractable Value)",
+    definition: "The maximum value that can be extracted from transaction ordering, often through front-running, back-running, or sandwich attacks on DEX trades.",
+    category: "Technical",
+    example: "A bot observing a large pending swap might insert transactions before and after it to profit from the price movement."
   },
   {
     term: "Oracle",
     definition: "External data feeds that provide real-world price information to DeFi protocols.",
-    category: "Advanced",
+    category: "Technical",
     example: "Like having a trusted price reporter telling smart contracts the current market rates."
   },
+
+  // Protocol Mechanics
   {
-    term: "Arbitrage",
-    definition: "Taking advantage of price differences between different markets or pools.",
-    category: "Advanced",
-    example: "Buying SOL for $98 on one DEX and selling for $100 on another."
+    term: "Automated Rebalancing",
+    definition: "Algorithmic adjustment of liquidity positions to maintain optimal capital efficiency as market conditions change.",
+    category: "Protocol Mechanics",
+    example: "When a token pair's price drifts towards the edge of the configured range, the position is automatically recentered around the current price."
+  },
+  {
+    term: "Range Utilization",
+    definition: "The percentage of a liquidity position's configured price range that is actively being utilized based on current trading activity.",
+    category: "Protocol Mechanics",
+    example: "A position with 80% range utilization is efficiently deployed, while 20% utilization suggests suboptimal range configuration."
+  },
+  {
+    term: "Fee Capture Ratio",
+    definition: "The proportion of trading volume captured as fees by a liquidity position, determined by the position's concentration and proximity to the current trading price.",
+    category: "Protocol Mechanics",
+    example: "A tightly concentrated position might capture 5x more fees per dollar than a widely distributed position."
   }
 ];
 
@@ -129,7 +129,7 @@ export default function Glossary() {
     return matchesSearch && matchesCategory;
   });
 
-  const categories = ["Meteora", "Basic LP", "Intermediate LP", "DeFi Basics", "Advanced"];
+  const categories = ["Meteora", "Intermediate LP", "Advanced", "Technical", "Protocol Mechanics"];
 
   const container = {
     hidden: { opacity: 0 },
@@ -158,9 +158,9 @@ export default function Glossary() {
           <div className="flex items-center justify-center gap-2 mb-4">
             <BookOpen className="h-8 w-8 text-primary" />
           </div>
-          <h1 className="text-4xl font-bold mb-4">DeFi Glossary</h1>
+          <h1 className="text-4xl font-bold mb-4">Technical Glossary</h1>
           <p className="text-lg text-muted-foreground">
-            Your beginner-friendly guide to understanding DeFi terminology, with focus on Liquidity Provision and Meteora's features
+            Advanced DeFi terminology and protocol-specific concepts for experienced users
           </p>
         </motion.div>
 
@@ -174,7 +174,7 @@ export default function Glossary() {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
             <Input
               type="text"
-              placeholder="Search terms..."
+              placeholder="Search technical terms..."
               className="pl-10"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -223,10 +223,10 @@ export default function Glossary() {
                     <h3 className="text-xl font-semibold">{term.term}</h3>
                     <span className={`text-xs px-2 py-1 rounded-full ${
                       term.category === "Meteora" ? "bg-purple-500/10 text-purple-500" :
-                      term.category === "Basic LP" ? "bg-emerald-500/10 text-emerald-500" :
                       term.category === "Intermediate LP" ? "bg-blue-500/10 text-blue-500" :
-                      term.category === "DeFi Basics" ? "bg-cyan-500/10 text-cyan-500" :
-                      "bg-amber-500/10 text-amber-500"
+                      term.category === "Advanced" ? "bg-amber-500/10 text-amber-500" :
+                      term.category === "Technical" ? "bg-cyan-500/10 text-cyan-500" :
+                      "bg-emerald-500/10 text-emerald-500"
                     }`}>
                       {term.category}
                     </span>

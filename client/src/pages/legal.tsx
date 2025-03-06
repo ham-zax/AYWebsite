@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AlertTriangle, Shield, Eye, Scale } from "lucide-react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export default function Legal() {
   return (
@@ -31,15 +31,15 @@ export default function Legal() {
             <div className="flex items-start gap-4">
               <AlertTriangle className="h-6 w-6 text-yellow-500 flex-shrink-0 mt-1" />
               <div>
-                <h2 className="text-xl font-semibold text-yellow-500 mb-2">Important Notice</h2>
+                <h2 className="text-xl font-semibold text-yellow-500 mb-2">Protocol Risk Acknowledgment</h2>
                 <p className="text-muted-foreground">
-                  AutoYield is an experimental protocol. By using our platform, you acknowledge and accept that:
+                  AutoYield is an experimental liquidity optimization protocol. By interfacing with our smart contracts, you acknowledge and accept that:
                 </p>
                 <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                  <li>• You are solely responsible for your actions and any resulting losses</li>
-                  <li>• DeFi protocols carry inherent risks including but not limited to smart contract vulnerabilities, market volatility, and potential total loss of funds</li>
-                  <li>• We provide no guarantees or warranties of any kind</li>
-                  <li>• Past performance does not indicate future results</li>
+                  <li>• You assume full responsibility for all operations, interactions, and potential losses</li>
+                  <li>• DeFi protocols entail inherent risks including smart contract vulnerabilities, oracle failures, MEV attacks, and impermanent loss</li>
+                  <li>• Our protocol provides no guarantees of profit or principal protection</li>
+                  <li>• Historical APY data does not predict future performance</li>
                 </ul>
               </div>
             </div>
@@ -66,7 +66,7 @@ export default function Legal() {
                 <CardContent className="pt-6">
                   <div className="prose prose-invert max-w-none">
                     <h2>Terms of Service</h2>
-                    
+
                     <h3>1. Acceptance of Terms</h3>
                     <p>
                       By accessing or using AutoYield ("the Protocol"), you agree to be bound by these Terms of Service. If you disagree with any part of the terms, you do not have permission to access the Protocol.

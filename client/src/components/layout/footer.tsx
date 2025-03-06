@@ -41,12 +41,8 @@ export default function Footer() {
               </div>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              Simplifying DeFi liquidity provision with AI-powered management on Solana
+              Sophisticated DeFi liquidity management with AI-driven optimization on Solana
             </p>
-            <div className="mt-4 flex items-center gap-2">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-              <span className="text-sm text-muted-foreground">All Systems Operational</span>
-            </div>
           </div>
 
           {/* Combined Navigation and Legal Links */}
@@ -120,22 +116,14 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-muted">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-center md:text-left text-muted-foreground">
+            <div className="flex items-center gap-2 order-2 md:order-1">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+              <span className="text-sm text-muted-foreground">All Systems Operational</span>
+            </div>
+
+            <p className="text-sm text-center md:text-right order-1 md:order-2 text-muted-foreground">
               © {new Date().getFullYear()} AutoYield. All rights reserved.
             </p>
-            <div className="flex items-center gap-4">
-              <Link href="/legal" onClick={handleLinkClick}>
-                <div className="text-xs text-muted-foreground hover:text-primary transition-colors cursor-pointer">
-                  Privacy Policy
-                </div>
-              </Link>
-              <span className="text-muted-foreground">•</span>
-              <Link href="/legal" onClick={handleLinkClick}>
-                <div className="text-xs text-muted-foreground hover:text-primary transition-colors cursor-pointer">
-                  Terms of Service
-                </div>
-              </Link>
-            </div>
           </div>
         </div>
       </div>

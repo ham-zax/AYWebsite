@@ -33,7 +33,7 @@ export default function Docs() {
             </div>
             <h1 className="text-4xl font-bold mb-3">Documentation</h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Everything you need to know about AutoYield's features, functionality, and how to make the most of our platform
+              Technical specifications, advanced strategies, and implementation details for AutoYield's liquidity optimization protocols
             </p>
           </div>
 
@@ -41,15 +41,15 @@ export default function Docs() {
             <TabsList className="grid grid-cols-3 w-full mb-8">
               <TabsTrigger value="getting-started" className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4" />
-                <span>Getting Started</span>
+                <span>Implementation Guide</span>
               </TabsTrigger>
               <TabsTrigger value="platform-guide" className="flex items-center gap-2">
                 <TrendingUp className="h-4 w-4" />
-                <span>Platform Guide</span>
+                <span>Strategy Optimization</span>
               </TabsTrigger>
               <TabsTrigger value="technical" className="flex items-center gap-2">
                 <Code className="h-4 w-4" />
-                <span>Technical Details</span>
+                <span>Technical Architecture</span>
               </TabsTrigger>
             </TabsList>
 
@@ -59,43 +59,43 @@ export default function Docs() {
                   <div className="prose prose-invert max-w-none">
                     <div className="flex items-center gap-2 mb-4">
                       <BookOpen className="h-6 w-6 text-primary" />
-                      <h2 className="text-2xl font-semibold m-0">Welcome to AutoYield</h2>
+                      <h2 className="text-2xl font-semibold m-0">AutoYield Integration</h2>
                     </div>
 
                     <div className="p-4 bg-primary/10 rounded-lg border border-primary/20 mb-6">
                       <p className="lead font-medium text-lg mb-0">
-                        Ready to put your crypto to work? You're in the right place. We'll walk you through everything you need to know to start earning from your idle tokens.
+                        This guide assumes familiarity with Solana development, SPL tokens, and basic DeFi mechanics. We'll focus on optimal implementation patterns and advanced configuration.
                       </p>
                     </div>
 
                     <h3 className="flex items-center gap-2">
                       <Wallet className="h-5 w-5 text-primary" />
-                      Before You Begin
+                      Technical Prerequisites
                     </h3>
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2">
                         <div className="bg-primary/20 text-primary p-1 rounded-full mt-1">
                           <CheckCircle className="h-4 w-4" />
                         </div>
-                        <span>A Solana wallet (we recommend Phantom or Solflare)</span>
+                        <span>Solana-compatible wallet with web3 auth capabilities (Phantom/Solflare)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="bg-primary/20 text-primary p-1 rounded-full mt-1">
                           <CheckCircle className="h-4 w-4" />
                         </div>
-                        <span>Some SOL for transaction fees (around 0.1 SOL should be plenty)</span>
+                        <span>Sufficient SOL for transaction fees (~0.1 SOL minimum for multiple operations)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="bg-primary/20 text-primary p-1 rounded-full mt-1">
                           <CheckCircle className="h-4 w-4" />
                         </div>
-                        <span>Tokens you'd like to provide as liquidity (USDC, SOL, etc.)</span>
+                        <span>SPL tokens for position initialization and protocol interactions</span>
                       </li>
                     </ul>
 
                     <h3 className="flex items-center gap-2 mt-8">
-                      <TrendingUp className="h-5 w-5 text-primary" />
-                      Your First Steps
+                      <Code className="h-5 w-5 text-primary" />
+                      Integration Implementation
                     </h3>
                     <ol className="space-y-6 my-6">
                       <li className="bg-card border rounded-lg p-4 shadow-sm">
@@ -104,8 +104,10 @@ export default function Docs() {
                             <span className="font-bold">1</span>
                           </div>
                           <div>
-                            <h4 className="font-semibold text-lg mb-1">Set Up Your Wallet</h4>
-                            <p className="text-muted-foreground">If you're new to Solana, install Phantom or Solflare. They're user-friendly and secure. Need help choosing? We've got a <a href="/defi101" className="text-primary hover:underline">comparison guide</a>.</p>
+                            <h4 className="font-semibold text-lg mb-1">Wallet Interface Setup</h4>
+                            <p className="text-muted-foreground">
+                              Implement <code>@solana/wallet-adapter-react</code> or equivalent adapter to handle transaction signing and wallet state management. Initialize connection with optimal commitment level (<code>confirmed</code> recommended, <code>finalized</code> for high-value operations).
+                            </p>
                           </div>
                         </div>
                       </li>
@@ -115,8 +117,8 @@ export default function Docs() {
                             <span className="font-bold">2</span>
                           </div>
                           <div>
-                            <h4 className="font-semibold text-lg mb-1">Connect to AutoYield</h4>
-                            <p className="text-muted-foreground">Click "Connect Wallet" at the top of the page. Your wallet will ask for permission - this is just to view your address and request transaction approvals.</p>
+                            <h4 className="font-semibold text-lg mb-1">Protocol Authorization</h4>
+                            <p className="text-muted-foreground">Configure program-derived address (PDA) authorization for AutoYield's protocol interfaces. Our SDK provides <code>createPositionManagerAuth()</code> utility for streamlined authorization flows.</p>
                           </div>
                         </div>
                       </li>
@@ -126,27 +128,76 @@ export default function Docs() {
                             <span className="font-bold">3</span>
                           </div>
                           <div>
-                            <h4 className="font-semibold text-lg mb-1">Start Small</h4>
-                            <p className="text-muted-foreground">We recommend starting with a small amount while you get familiar with the platform. You can always add more later!</p>
+                            <h4 className="font-semibold text-lg mb-1">Strategy Parameter Configuration</h4>
+                            <p className="text-muted-foreground">Select volatility thresholds, rebalancing parameters, and execution preferences through our configuration interface or directly via program instructions.</p>
                           </div>
                         </div>
                       </li>
                     </ol>
 
+                    <div className="bg-card border rounded-lg p-5 mb-8">
+                      <h4 className="font-semibold text-lg mb-3">Implementation Example</h4>
+                      <pre className="bg-muted p-4 rounded-md overflow-x-auto">
+                        <code className="text-xs md:text-sm">
+{`// Example integration with AutoYield protocol
+import { Connection, PublicKey } from '@solana/web3.js';
+import { useWallet } from '@solana/wallet-adapter-react';
+import { AutoYield, PositionConfig, RiskLevel } from '@autoyield/sdk';
+
+// Initialize protocol connection
+const connection = new Connection(rpcUrl, 'confirmed');
+const { publicKey, signTransaction } = useWallet();
+
+// Create AutoYield client instance
+const autoYield = new AutoYield({
+  connection,
+  wallet: { publicKey, signTransaction },
+  config: {
+    rebalanceThreshold: 0.75, // 75% position utilization
+    slippageTolerance: 0.005, // 0.5% max slippage
+    gasOptimizationLevel: 'high',
+    riskProfile: RiskLevel.MODERATE
+  }
+});
+
+// Initialize new position
+const createPosition = async () => {
+  const tx = await autoYield.createPosition({
+    tokenPair: {
+      baseToken: new PublicKey('SOL_MINT_ADDRESS'),
+      quoteToken: new PublicKey('USDC_MINT_ADDRESS')
+    },
+    initialDeposit: {
+      baseAmount: 5 * 1e9, // 5 SOL
+      quoteAmount: 500 * 1e6 // 500 USDC
+    },
+    concentrationRange: {
+      lowerTick: -10, // ~10% below current price
+      upperTick: 10,  // ~10% above current price
+    },
+    autoCompound: true
+  });
+
+  return tx.signature;
+};`}
+                        </code>
+                      </pre>
+                    </div>
+
                     <div className="mt-8 p-4 bg-yellow-500/10 rounded-lg border border-yellow-500/20">
                       <div className="flex items-center gap-2 mb-2">
                         <AlertTriangle className="h-5 w-5 text-yellow-500" />
-                        <h4 className="text-lg font-semibold text-yellow-500 m-0">A Note on Security</h4>
+                        <h4 className="text-lg font-semibold text-yellow-500 m-0">Advanced Integration Notes</h4>
                       </div>
                       <p className="mt-2 text-sm">
-                        While we've built AutoYield with security in mind, remember that all DeFi activities carry inherent risks. Never invest more than you can afford to lose, and always DYOR (Do Your Own Research).
+                        For high throughput applications, consider implementing transaction batching via our <code>batchTransactions()</code> utility. Remember that custom position management strategies require additional authorization via program-derived addresses (PDAs).
                       </p>
                     </div>
 
                     <div className="flex justify-center mt-8">
                       <a href="/defi101" className="bg-primary/20 hover:bg-primary/30 text-primary font-medium py-2 px-4 rounded-lg transition-colors flex items-center gap-2">
                         <HelpCircle className="h-4 w-4" />
-                        <span>Learn more in our DeFi 101 Guide</span>
+                        <span>View Advanced DeFi Strategies</span>
                       </a>
                     </div>
                   </div>
@@ -160,20 +211,20 @@ export default function Docs() {
                   <div className="prose prose-invert max-w-none">
                     <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
                       <TrendingUp className="h-6 w-6 text-primary" />
-                      Making the Most of AutoYield
+                      Strategy Optimization Framework
                     </h2>
 
                     <h3 className="flex items-center gap-2 mb-4">
                       <LineChart className="h-5 w-5 text-primary" />
-                      Understanding Your Dashboard
+                      Advanced Analytics Dashboard
                     </h3>
                     <div className="space-y-4">
                       <div className="flex items-start gap-4 p-4 bg-card rounded-lg border shadow-sm">
                         <TrendingUp className="h-6 w-6 text-primary flex-shrink-0" />
                         <div>
-                          <h4 className="font-semibold">Performance Metrics</h4>
+                          <h4 className="font-semibold">Real-time Performance Vectors</h4>
                           <p className="text-sm text-muted-foreground">
-                            Your dashboard shows real-time APR, earned fees, and position values. Green numbers mean you're profiting, while red might indicate it's time for our AI to rebalance.
+                            Position delta, gamma exposure, and fee accrual metrics displayed with sub-minute latency. Custom threshold alerts can be configured for key performance indicators and position status changes.
                           </p>
                         </div>
                       </div>
@@ -181,9 +232,9 @@ export default function Docs() {
                       <div className="flex items-start gap-4 p-4 bg-card rounded-lg border shadow-sm">
                         <Shield className="h-6 w-6 text-primary flex-shrink-0" />
                         <div>
-                          <h4 className="font-semibold">Risk Indicators</h4>
+                          <h4 className="font-semibold">Advanced Risk Modeling</h4>
                           <p className="text-sm text-muted-foreground">
-                            We display pool health scores and impermanent loss metrics to help you understand your position's status. Our AI uses these same indicators to make decisions.
+                            Multi-factor risk assessment including impermanent loss forecasting, volatility prediction, and cross-pair correlation analysis. Our proprietary IL-Vector™ algorithm anticipates impermanent loss before conventional indicators.
                           </p>
                         </div>
                       </div>
@@ -191,7 +242,7 @@ export default function Docs() {
 
                     <h3 className="flex items-center gap-2 mt-8 mb-4">
                       <CheckCircle className="h-5 w-5 text-primary" />
-                      Best Practices
+                      Optimization Techniques
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                       <div className="bg-card p-4 rounded-lg border shadow-sm">
@@ -199,10 +250,10 @@ export default function Docs() {
                           <div className="bg-primary/20 p-1.5 rounded-full">
                             <span className="text-primary text-xs">1</span>
                           </div>
-                          Diversification
+                          Algorithmic Range Selection
                         </h4>
                         <p className="text-sm text-muted-foreground">
-                          Spread your liquidity across different pools to minimize risk
+                          Dynamic price range calibration based on volatility metrics and trading volume profiles
                         </p>
                       </div>
                       <div className="bg-card p-4 rounded-lg border shadow-sm">
@@ -210,10 +261,10 @@ export default function Docs() {
                           <div className="bg-primary/20 p-1.5 rounded-full">
                             <span className="text-primary text-xs">2</span>
                           </div>
-                          Time Horizon
+                          Fee Tier Optimization
                         </h4>
                         <p className="text-sm text-muted-foreground">
-                          LP positions generally perform better over longer periods
+                          Automated fee tier selection optimizing for maximum capital efficiency in varying market conditions
                         </p>
                       </div>
                       <div className="bg-card p-4 rounded-lg border shadow-sm">
@@ -221,47 +272,47 @@ export default function Docs() {
                           <div className="bg-primary/20 p-1.5 rounded-full">
                             <span className="text-primary text-xs">3</span>
                           </div>
-                          Regular Monitoring
+                          Adaptive Rebalancing
                         </h4>
                         <p className="text-sm text-muted-foreground">
-                          While our AI handles the heavy lifting, check your dashboard weekly
+                          MEV-resistant execution with gas optimization and multi-factor timing algorithms
                         </p>
                       </div>
                     </div>
 
                     <h3 className="flex items-center gap-2 mb-4">
-                      <Shield className="h-5 w-5 text-primary" />
-                      Risk Management
+                      <Settings className="h-5 w-5 text-primary" />
+                      Protocol Security Mechanisms
                     </h3>
                     <p className="mb-4">
-                      Our platform includes several safety features:
+                      Our platform includes enterprise-grade security features:
                     </p>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                       <li className="flex items-start gap-2 bg-card border rounded-lg p-3">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                        <span className="text-sm">Automatic emergency withdrawals if pool health deteriorates</span>
+                        <span className="text-sm">Granular position health monitoring with circuit breaker mechanisms</span>
                       </li>
                       <li className="flex items-start gap-2 bg-card border rounded-lg p-3">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                        <span className="text-sm">Slippage protection on all transactions</span>
+                        <span className="text-sm">TWAP-based execution for position adjustments to minimize slippage</span>
                       </li>
                       <li className="flex items-start gap-2 bg-card border rounded-lg p-3">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                        <span className="text-sm">Real-time monitoring and alerts</span>
+                        <span className="text-sm">Real-time oracle verification with multi-source data validation</span>
                       </li>
                       <li className="flex items-start gap-2 bg-card border rounded-lg p-3">
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                        <span className="text-sm">Audited smart contracts</span>
+                        <span className="text-sm">Audited protocol contracts with time-locked upgrades</span>
                       </li>
                     </ul>
 
                     <div className="mt-6 p-5 bg-gradient-to-r from-primary/20 to-primary/5 rounded-lg border border-primary/20 shadow-md">
                       <h4 className="text-lg font-semibold mb-2 flex items-center gap-2">
                         <Zap className="h-5 w-5 text-primary" />
-                        Beta Program Note
+                        AutoYield V2 Beta Features
                       </h4>
                       <p className="text-sm m-0">
-                        We're constantly improving AutoYield based on user feedback. Your experience helps make the platform better for everyone. Found something that could work better? Let us know!
+                        Our upcoming V2 protocol introduces cross-protocol arbitrage, advanced composability with lending platforms, and leveraged positions with automated liquidation protection. Beta participants gain early access to these features.
                       </p>
                     </div>
                   </div>
@@ -275,7 +326,7 @@ export default function Docs() {
                   <div className="prose prose-invert max-w-none">
                     <div className="flex items-center gap-2 mb-6">
                       <Code className="h-6 w-6 text-primary" />
-                      <h2 className="text-2xl font-semibold m-0">Technical Details</h2>
+                      <h2 className="text-2xl font-semibold m-0">Technical Architecture</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
@@ -285,24 +336,24 @@ export default function Docs() {
                           Smart Contract Architecture
                         </h3>
                         <p className="text-sm text-muted-foreground mb-4">
-                          Our platform is built on thoroughly audited smart contracts that handle:
+                          Our protocol operates via a modular architecture of specialized Solana programs:
                         </p>
                         <ul className="space-y-2">
                           <li className="flex items-start gap-2">
                             <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm">Automated position management</span>
+                            <span className="text-sm"><code>PositionManager</code>: Handles creation, lifecycle, and interactions with liquidity positions</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm">Fee collection and reinvestment</span>
+                            <span className="text-sm"><code>StrategyController</code>: Implements algorithmic decision logic for position adjustments</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm">Emergency withdrawals</span>
+                            <span className="text-sm"><code>FeeProcessor</code>: Handles fee collection, compounding, and yield distribution</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm">Position rebalancing</span>
+                            <span className="text-sm"><code>GuardianModule</code>: Emergency protocol for risk and security protection</span>
                           </li>
                         </ul>
                       </div>
@@ -310,27 +361,27 @@ export default function Docs() {
                       <div className="bg-card border rounded-lg p-5 shadow-sm">
                         <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                           <TrendingUp className="h-5 w-5 text-primary" />
-                          AI Strategy Engine
+                          Strategy Engine Architecture
                         </h3>
                         <p className="text-sm text-muted-foreground mb-4">
-                          Our AI uses multiple data sources to optimize your positions:
+                          Our AI strategy engine processes multiple data sources for optimal position management:
                         </p>
                         <ul className="space-y-2">
                           <li className="flex items-start gap-2">
                             <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm">Historical price data and volatility patterns</span>
+                            <span className="text-sm">On-chain time series analysis with statistical volatility modeling</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm">Trading volume analysis</span>
+                            <span className="text-sm">MEV-resistant execution pathways with optimized transaction timing</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm">Pool health metrics</span>
+                            <span className="text-sm">Cross-pool analytics for liquidity fragmentation detection</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
-                            <span className="text-sm">Gas price optimization</span>
+                            <span className="text-sm">Predictive gas modeling for minimizing transaction costs</span>
                           </li>
                         </ul>
                       </div>
@@ -338,11 +389,11 @@ export default function Docs() {
 
                     <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                       <Code className="h-5 w-5 text-primary" />
-                      API Integration
+                      API Reference
                     </h3>
                     <div className="bg-card border rounded-lg">
                       <div className="p-3 border-b bg-muted/50 text-sm font-mono">
-                        Request format for position data
+                        Position Data Endpoint
                       </div>
                       <pre className="bg-card p-4 rounded-b-lg m-0 overflow-x-auto">
                         <code className="text-sm">
@@ -353,7 +404,7 @@ export default function Docs() {
 
                     <div className="bg-card border rounded-lg mt-4">
                       <div className="p-3 border-b bg-muted/50 text-sm font-mono">
-                        Response format
+                        Response Schema
                       </div>
                       <pre className="bg-card p-4 rounded-b-lg m-0 overflow-x-auto">
                         <code className="text-sm">
@@ -363,7 +414,16 @@ export default function Docs() {
     "tokens": ["SOL", "USDC"],
     "value_usd": "number",
     "apr": "number",
-    "health_score": "number"
+    "health_score": "number",
+    "range_utilization": "number",
+    "fee_tier": "number",
+    "position_delta": {
+      "delta_1d": "number",
+      "delta_7d": "number",
+      "il_component": "number",
+      "fee_component": "number"
+    },
+    "next_rebalance_estimate": "timestamp"
   }]
 }`}
                         </code>
@@ -376,7 +436,7 @@ export default function Docs() {
                         Developer Resources
                       </h4>
                       <p className="m-0">
-                        Building on top of AutoYield? Check out our <a href="/docs/api" className="text-primary hover:text-primary/80">API documentation</a> or join our <a href="https://discord.gg/autoyield" className="text-primary hover:text-primary/80">Discord</a> for developer support.
+                        Access our comprehensive <a href="/docs/api" className="text-primary hover:text-primary/80">API documentation</a>, <a href="https://github.com/autoyield/sdk" className="text-primary hover:text-primary/80">SDK repository</a>, and join our <a href="https://discord.gg/autoyield" className="text-primary hover:text-primary/80">Developer Discord</a> for technical support and integration assistance.
                       </p>
                     </div>
                   </div>
@@ -387,7 +447,7 @@ export default function Docs() {
 
           <div className="mt-8 text-sm text-muted-foreground text-center p-4 bg-card border rounded-lg shadow-sm">
             <p className="mb-0">
-              AutoYield is in Beta. While we strive for excellence, please understand that DeFi involves inherent risks. Always do your own research and invest responsibly.
+              AutoYield is in Beta. While our protocol has undergone security audits, all DeFi interactions carry inherent risks. Optimize your position sizing based on your risk tolerance.
             </p>
           </div>
         </motion.div>
