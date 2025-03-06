@@ -11,6 +11,7 @@ import Blog from "@/pages/blog";
 import BlogPost from "@/pages/blog/[slug]";
 import About from "@/pages/about";
 import Glossary from "@/pages/glossary";
+import DeFi101 from "@/pages/defi101";
 import Legal from "@/pages/legal";
 import NotFound from "@/pages/not-found";
 
@@ -27,6 +28,7 @@ function Router() {
           <Route path="/blog/:slug" component={BlogPost} />
           <Route path="/about" component={About} />
           <Route path="/glossary" component={Glossary} />
+          <Route path="/defi101" component={DeFi101} />
           <Route path="/legal" component={Legal} />
           <Route component={NotFound} />
         </Switch>
