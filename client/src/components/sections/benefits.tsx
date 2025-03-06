@@ -5,27 +5,27 @@ import { MousePointer, Brain, TrendingUp, Shield, Clock } from "lucide-react";
 const benefits = [
   {
     title: "Complex LP Management in Just 3 Clicks",
-    description: "What normally requires constant monitoring, complex calculations, and DeFi expertise is simplified to a 3-click process. Deploy sophisticated strategies without the technical overhead.",
+    description: "We transform what traditionally requires hours of research, constant monitoring, and technical expertise into a simple 3-click process. Setup your position once and let our system handle everything else.",
     icon: MousePointer
   },
   {
     title: "Advanced Risk Mitigation Algorithms",
-    description: "Our proprietary position management algorithms predict and protect against impermanent loss vectors before they impact your capital using advanced volatility modeling.",
+    description: "Our system detects potential impermanent loss before it happens. Using volatility prediction models, we automatically adjust your positions to protect your capital when market conditions change.",
     icon: Shield
   },
   {
     title: "Capital Efficiency Optimization",
-    description: "Dynamic position rebalancing maximizes your capital utilization by 50-100x compared to traditional AMMs, capturing optimal fee generation with minimal slippage.",
+    description: "Achieve 50-100x higher capital efficiency compared to traditional AMMs. Our concentrated liquidity positions precisely target the most active price ranges to maximize your trading fee revenue.",
     icon: TrendingUp
   },
   {
     title: "AI-Powered Strategy Execution",
-    description: "Machine learning algorithms analyze on-chain data for real-time position optimization, automatically executing complex strategies that would require 24/7 manual oversight.",
+    description: "Our algorithms continuously analyze on-chain data to identify optimal position parameters. These strategies would typically require 24/7 manual oversight, but are executed automatically for you.",
     icon: Brain
   },
   {
     title: "24/7 Automation",
-    description: "Continuous monitoring and automated position management ensures your liquidity is always working optimally, even while you sleep or during volatile market conditions.",
+    description: "Your positions are constantly monitored and adjusted even while you sleep. During high volatility periods, when manual intervention would be most critical (and stressful), our system works hardest.",
     icon: Clock
   }
 ];
