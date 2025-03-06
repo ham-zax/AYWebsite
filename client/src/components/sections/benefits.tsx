@@ -1,36 +1,31 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, Brain, Clock, TrendingUp, Shield, Zap } from "lucide-react";
+import { CheckCircle2, Brain, Clock, TrendingUp, Shield, MousePointer } from "lucide-react";
 
 const benefits = [
   {
-    title: "No More Manual Management",
-    description: "Forget about constantly monitoring pools and adjusting positions. Our AI handles everything while you focus on what matters to you.",
-    icon: Clock
+    title: "Complex LP Management in Just 3 Clicks",
+    description: "What normally requires constant monitoring, complex calculations, and DeFi expertise is simplified to a 3-click process. Deploy sophisticated strategies without the technical overhead.",
+    icon: MousePointer
   },
   {
-    title: "Smart Risk Management",
-    description: "Sleep better knowing our AI actively protects your positions from market volatility and impermanent loss.",
+    title: "Advanced Risk Mitigation Algorithms",
+    description: "Our proprietary position management algorithms predict and protect against impermanent loss vectors before they impact your capital using advanced volatility modeling.",
     icon: Shield
   },
   {
-    title: "Better Returns, Less Stress",
-    description: "Our platform identifies the most profitable opportunities and automatically rebalances your positions for optimal yields.",
+    title: "Capital Efficiency Optimization",
+    description: "Dynamic position rebalancing maximizes your capital utilization by 50-100x compared to traditional AMMs, capturing optimal fee generation with minimal slippage.",
     icon: TrendingUp
   },
   {
-    title: "Simple Yet Powerful",
-    description: "Whether you're new to DeFi or a seasoned LP provider, we've made liquidity management as easy as a few clicks.",
-    icon: Zap
-  },
-  {
-    title: "AI-Powered Insights",
-    description: "Get real-time analytics and predictions about your LP positions, helping you make informed decisions.",
+    title: "AI-Powered Strategy Execution",
+    description: "Machine learning algorithms analyze on-chain data for real-time position optimization, automatically executing complex strategies that would require 24/7 manual oversight.",
     icon: Brain
   },
   {
-    title: "Battle-Tested Security",
-    description: "Built on Solana with multiple security layers and real-time monitoring to keep your assets safe.",
+    title: "Enterprise-Grade Security Architecture",
+    description: "Multi-layered smart contract security with MEV-resistant transaction pathways and time-locked protocol governance to protect your positions from front-running and exploits.",
     icon: Shield
   }
 ];
