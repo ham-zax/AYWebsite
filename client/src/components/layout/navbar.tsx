@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MENU_ITEMS } from "@/lib/constants";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4">
             {MENU_ITEMS.map((item) => (
               <Link key={item.path} href={item.path}>
                 <div
@@ -42,16 +43,20 @@ export default function Navbar() {
                 </div>
               </Link>
             ))}
+            <ThemeToggle />
             <Button>Launch App</Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <div className="flex items-center space-x-2 md:hidden">
+            <ThemeToggle />
+            <button
+              className="md:hidden"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
