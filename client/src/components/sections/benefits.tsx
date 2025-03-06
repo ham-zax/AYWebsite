@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, Brain, Clock, TrendingUp, Shield, MousePointer } from "lucide-react";
+import { MousePointer, Brain, TrendingUp, Shield, Clock } from "lucide-react";
 
 const benefits = [
   {
@@ -24,9 +24,9 @@ const benefits = [
     icon: Brain
   },
   {
-    title: "Enterprise-Grade Security Architecture",
-    description: "Multi-layered smart contract security with MEV-resistant transaction pathways and time-locked protocol governance to protect your positions from front-running and exploits.",
-    icon: Shield
+    title: "24/7 Automation",
+    description: "Continuous monitoring and automated position management ensures your liquidity is always working optimally, even while you sleep or during volatile market conditions.",
+    icon: Clock
   }
 ];
 
