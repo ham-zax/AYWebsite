@@ -11,7 +11,7 @@ export default function YieldComparison() {
   const defiYields = [
     { name: "Basic LP", value: "5-20%", icon: Coins, note: "Higher volume pools" },
     { name: "Optimized LP", value: "15-50%", icon: BadgePercent, note: "With active management" },
-    { name: "AI-Managed LP", value: "20-100%*", icon: Clock, note: "Optimal conditions" }
+    { name: "AI-Managed LP", value: "20-500%*", icon: Clock, note: "Optimal conditions" }
   ];
 
   const containerVariants = {
@@ -120,7 +120,7 @@ export default function YieldComparison() {
               <div className="mt-6 pt-4 border-t border-border">
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-muted-foreground">Potential Annual Returns</span>
-                  <span className="text-xl font-bold text-primary">5-100%*</span>
+                  <span className="text-xl font-bold text-primary">5-500%*</span>
                 </div>
                 <p className="text-xs text-muted-foreground mt-2">
                   Higher risk, more volatile conditions, and potential for impermanent loss
