@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
-import { Building, LineChart, Clock, Coins, BadgePercent, Building2 } from "lucide-react";
+import { Building, LineChart, Clock, Coins, BadgePercent, Building2, AlertTriangle } from "lucide-react";
 
 export default function YieldComparison() {
   const tradFiYields = [
-    { name: "Savings Account", value: "0.5%", icon: Building },
+    { name: "Savings Account", value: "0.5-1%", icon: Building },
     { name: "Certificate of Deposit", value: "2-4%", icon: Building2 },
     { name: "Stock Market (Avg)", value: "7-10%", icon: LineChart }
   ];
 
   const defiYields = [
-    { name: "Basic LP", value: "20-50%", icon: Coins },
-    { name: "Optimized LP", value: "50-200%", icon: BadgePercent },
-    { name: "AI-Managed LP", value: "100-500%", icon: Clock }
+    { name: "Basic LP", value: "5-20%", icon: Coins, note: "Higher volume pools" },
+    { name: "Optimized LP", value: "15-50%", icon: BadgePercent, note: "With active management" },
+    { name: "AI-Managed LP", value: "20-100%*", icon: Clock, note: "Optimal conditions" }
   ];
 
   const containerVariants = {
@@ -40,7 +40,7 @@ export default function YieldComparison() {
       >
         <h3 className="text-2xl font-bold text-center mb-6">Traditional Finance vs. DeFi Yields</h3>
         <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-          DeFi offers significantly higher potential returns than traditional finance options, though with different risk profiles.
+          DeFi potentially offers higher returns than traditional finance options, though with different risk profiles.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -52,7 +52,7 @@ export default function YieldComparison() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="bg-card border rounded-lg p-6">
+            <div className="bg-card border rounded-lg p-6 shadow-md">
               <h4 className="text-xl font-bold mb-6 text-center">Traditional Finance</h4>
 
               <div className="space-y-4">
@@ -75,9 +75,12 @@ export default function YieldComparison() {
 
               <div className="mt-6 pt-4 border-t border-border">
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-muted-foreground">Average Annual Returns</span>
+                  <span className="text-sm text-muted-foreground">Typical Annual Returns</span>
                   <span className="text-xl font-bold text-blue-500">~5%</span>
                 </div>
+                <p className="text-xs text-muted-foreground mt-2">
+                  Lower risk, established regulations, and more predictable outcomes
+                </p>
               </div>
             </div>
           </motion.div>
@@ -90,7 +93,7 @@ export default function YieldComparison() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="bg-card border rounded-lg p-6">
+            <div className="bg-card border rounded-lg p-6 shadow-md">
               <h4 className="text-xl font-bold mb-6 text-center">DeFi on Solana</h4>
 
               <div className="space-y-4">
@@ -105,6 +108,9 @@ export default function YieldComparison() {
                     </div>
                     <div className="flex-1">
                       <p className="text-sm font-medium">{item.name}</p>
+                      {item.note && (
+                        <p className="text-xs text-muted-foreground">{item.note}</p>
+                      )}
                     </div>
                     <div className="text-lg font-bold text-primary">{item.value}</div>
                   </motion.div>
@@ -114,19 +120,37 @@ export default function YieldComparison() {
               <div className="mt-6 pt-4 border-t border-border">
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-muted-foreground">Potential Annual Returns</span>
-                  <span className="text-xl font-bold text-primary">20-500%</span>
+                  <span className="text-xl font-bold text-primary">5-100%*</span>
                 </div>
+                <p className="text-xs text-muted-foreground mt-2">
+                  Higher risk, more volatile conditions, and potential for impermanent loss
+                </p>
               </div>
             </div>
           </motion.div>
         </div>
 
         <div className="mt-8 p-4 bg-card border rounded-lg">
-          <p className="text-sm text-muted-foreground">
-            <strong>Note:</strong> Higher returns come with increased risk. DeFi yields can fluctuate dramatically based on market conditions, 
-            trading volumes, and token volatility. AutoYield's AI helps manage these risks, but always remember that past performance 
-            is not indicative of future results.
-          </p>
+          <div className="flex items-start gap-2">
+            <AlertTriangle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
+            <div className="text-sm text-muted-foreground">
+              <p className="font-medium text-amber-500 mb-2">Important Disclaimers:</p>
+              <ul className="list-disc ml-4 space-y-2">
+                <li>
+                  <strong>Not Financial Advice:</strong> The yields shown are illustrative and based on historical data. They are not guarantees of future performance.
+                </li>
+                <li>
+                  <strong>Risk Correlation:</strong> Higher yields typically come with significantly higher risks. DeFi yields can fluctuate dramatically based on market conditions, trading volumes, and token volatility.
+                </li>
+                <li>
+                  <strong>Exceptional Cases:</strong> While returns exceeding 100% APR are possible in certain scenarios, they are rare, temporary, and often come with substantial risks or represent early-stage protocols with unsustainable tokenomics.
+                </li>
+                <li>
+                  <strong>*High-End Returns:</strong> The upper range represents exceptional performance under ideal market conditions, which are not typical or guaranteed.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </motion.div>
     </div>
