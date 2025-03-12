@@ -5,12 +5,15 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsx server/index.ts",
-    "build": "vite build",
-    "deploy": "npx wrangler pages deploy dist/public",
-    "deploy:full": "npm run build && npm run deploy",
+    "build": "vite build && esbuild worker/index.ts --bundle --format=esm --outdir=dist/worker",
+    "deploy": "wrangler deploy",
+    "deploy:full": "npm run build && npm run upload-assets && npm run deploy",
     "start": "NODE_ENV=production node dist/index.js",
     "check": "tsc",
-    "db:push": "drizzle-kit push"
+    "db:push": "drizzle-kit push",
+    "create-bucket": "npx wrangler r2 bucket create my-static-assets",
+    "upload-assets": "npx wrangler r2 object put my-static-assets --directory ./dist/assets"
+
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -81,6 +84,7 @@
     "zod-validation-error": "^3.4.0"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250311.0",
     "@replit/vite-plugin-cartographer": "^0.0.4",
     "@replit/vite-plugin-runtime-error-modal": "^0.0.3",
     "@tailwindcss/typography": "^0.5.15",

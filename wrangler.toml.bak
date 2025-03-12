@@ -1,0 +1,12 @@
+name = "my-cloudflare-worker"
+account_id = "05ad45bfa2b3840ddd1be87d6bdc65ad"
+main = "dist/worker/index.js"
+compatibility_date = "2025-03-12"
+
+[build]
+command = "npm run build"
+
+# Add this R2 bucket binding
+[[r2_buckets]]
+binding = "STATIC_ASSETS"
+bucket_name = "my-static-assets"

@@ -1,6 +1,0 @@
-name = "my-cloudflare-worker"
-type = "javascript"
-account_id = "your-account-id"
-
-[build]
-command = "npm run build:cloudflare"
